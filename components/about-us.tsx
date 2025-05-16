@@ -21,7 +21,7 @@ export default function AboutUs() {
       {/* Unsichtbarer Anker-Punkt für die Navigation */}
       <div id="persoenlich" className="-mt-24 pt-24 invisible absolute"></div>
 
-      <section className="section bg-gray-50">
+      <section className="section bg-gray-50 pt-8 md:pt-12">
         <h2 className="section-title">Über uns</h2>
         <p className="section-subtitle">
           Lerne uns kennen und erfahre mehr über unsere Mission für deine Gesundheit und dein Wohlbefinden
@@ -29,14 +29,14 @@ export default function AboutUs() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-12">
           <div className="order-2 md:order-1">
-            <h3 className="text-2xl font-bold mb-4">Unsere Geschichte</h3>
-            <p className="text-lg mb-4">
+            <h3 className="text-2xl font-bold mb-4 px-4 md:px-0">Unsere Geschichte</h3>
+            <p className="text-lg mb-4 px-4 md:px-0">
               Als leidenschaftliche Gesundheitsexperten haben wir energiequelle gegründet, um Menschen dabei zu helfen,
               ihr volles Potenzial zu entfalten. Unsere Reise begann mit der Erkenntnis, dass echte Gesundheit mehr ist
               als die Abwesenheit von Krankheit – sie ist ein Zustand des vollständigen körperlichen, geistigen und
               sozialen Wohlbefindens.
             </p>
-            <p className="text-lg mb-6">
+            <p className="text-lg mb-6 px-4 md:px-0">
               Als offizieller Zinzino-Partner teilen wir die Vision, durch hochwertige, wissenschaftlich fundierte
               Nahrungsergänzungsmittel einen positiven Einfluss auf die Gesundheit von Menschen zu nehmen. Wir glauben
               an einen ganzheitlichen Ansatz und bieten dir nicht nur Produkte, sondern auch Beratung und Unterstützung
@@ -66,21 +66,21 @@ export default function AboutUs() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
           <div className="bg-white p-4 rounded-lg shadow-md">
             <h3 className="text-xl font-bold mb-3 text-[#2aaa8a]">Unsere Mission</h3>
-            <p>
+            <p className="px-2">
               Wir möchten Menschen dabei unterstützen, durch optimale Ernährung und Nahrungsergänzung ein gesünderes,
               aktiveres und erfüllteres Leben zu führen.
             </p>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-md">
             <h3 className="text-xl font-bold mb-3 text-[#2aaa8a]">Unsere Werte</h3>
-            <p>
+            <p className="px-2">
               Qualität, Transparenz und wissenschaftliche Fundierung stehen im Mittelpunkt unserer Arbeit. Wir glauben
               an nachhaltige Gesundheitslösungen und persönliche Betreuung.
             </p>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-md">
             <h3 className="text-xl font-bold mb-3 text-[#2aaa8a]">Unser Versprechen</h3>
-            <p>
+            <p className="px-2">
               Wir versprechen dir nur Produkte anzubieten, von denen wir selbst überzeugt sind und die wir auch selbst
               verwenden. Deine Zufriedenheit steht für uns an erster Stelle.
             </p>

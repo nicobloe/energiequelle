@@ -36,7 +36,7 @@ export default function Benefits() {
       {/* Unsichtbarer Anker-Punkt für die Navigation */}
       <div id="benefits" className="-mt-24 pt-24 invisible absolute"></div>
 
-      <section className="section">
+      <section className="section pt-8 md:pt-12">
         <h2 className="section-title">Warum Zinzino?</h2>
         <p className="section-subtitle">
           Zinzino steht für höchste Qualität und wissenschaftlich fundierte Nahrungsergänzungsmittel, die Ihr

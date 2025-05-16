@@ -31,7 +31,7 @@ export default function BlogPreview() {
       {/* Unsichtbarer Anker-Punkt für die Navigation */}
       <div id="blog" className="-mt-24 pt-24 invisible absolute"></div>
 
-      <section className="section">
+      <section className="section pt-8 md:pt-12">
         <h2 className="section-title">Blog</h2>
         <p className="section-subtitle">Informative Artikel und Tipps rund um Gesundheit, Ernährung und Wohlbefinden</p>
 

@@ -30,7 +30,7 @@ body {
 }
 
 .section-subtitle {
-  @apply text-xl mb-12 mx-auto max-w-3xl hyphens-auto leading-relaxed;
+  @apply text-xl mb-12 mx-auto max-w-3xl hyphens-auto leading-relaxed text-center px-4;
 }
 
 .product-card {
@@ -69,7 +69,7 @@ body {
 }
 
 .section {
-  @apply py-16 px-4 md:px-8 max-w-7xl mx-auto relative;
+  @apply py-12 px-4 md:px-8 max-w-7xl mx-auto relative;
 }
 
 .top-bar {

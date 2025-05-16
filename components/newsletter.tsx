@@ -57,7 +57,7 @@ export default function Newsletter() {
       {/* Unsichtbarer Anker-Punkt für die Navigation */}
       <div id="newsletter" className="-mt-24 pt-24 invisible absolute"></div>
 
-      <section className="section bg-[#f8f9fa]">
+      <section className="section bg-[#f8f9fa] pt-8 md:pt-12">
         <div className="max-w-3xl mx-auto text-center">
           <div className="inline-block p-3 bg-[#2aaa8a] bg-opacity-10 rounded-full mb-4">
             <Mail className="h-6 w-6 text-[#2aaa8a]" />

@@ -9,7 +9,7 @@ export default function Stoffwechselkur() {
       {/* Unsichtbarer Anker-Punkt für die Navigation */}
       <div id="stoffwechselkur" className="-mt-24 pt-24 invisible absolute"></div>
 
-      <section className="section bg-gray-50">
+      <section className="section bg-gray-50 pt-8 md:pt-12">
         <h2 className="section-title">Stoffwechselkur</h2>
         <p className="section-subtitle">
           Ein ganzheitliches Regenerations- und Präventionskonzept für mehr Vitalität und Wohlbefinden

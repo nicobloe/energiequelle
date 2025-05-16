@@ -30,16 +30,16 @@ export default function Testimonials() {
       {/* Unsichtbarer Anker-Punkt für die Navigation */}
       <div id="testimonials" className="-mt-24 pt-24 invisible absolute"></div>
 
-      <section className="section bg-gray-50">
+      <section className="section bg-gray-50 pt-8 md:pt-12">
         <h2 className="section-title">Kundenerfahrungen</h2>
         <p className="section-subtitle">
           Erfahren Sie, wie Zinzino-Produkte das Leben unserer Kunden positiv verändert haben.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mt-12 px-2 sm:px-4 md:px-0">
           {testimonials.map((testimonial) => (
             <Card key={testimonial.id} className="border-none shadow-lg">
-              <CardContent className="p-6">
+              <CardContent className="p-4 sm:p-6">
                 <div className="flex mb-4">
                   {[...Array(5)].map((_, i) => (
                     <StarIcon

@@ -41,7 +41,7 @@ export default function Events() {
       {/* Unsichtbarer Anker-Punkt für die Navigation */}
       <div id="events" className="-mt-24 pt-24 invisible absolute"></div>
 
-      <section className="section bg-gray-50">
+      <section className="section bg-gray-50 pt-8 md:pt-12">
         <h2 className="section-title">Kommende Events</h2>
         <p className="section-subtitle">
           Nehmen Sie an unseren Veranstaltungen teil und erfahren Sie mehr über Gesundheit und Wohlbefinden

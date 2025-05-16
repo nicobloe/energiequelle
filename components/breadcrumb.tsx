@@ -30,7 +30,7 @@ export default function Breadcrumb() {
   if (segments.length === 0) return null
 
   return (
-    <nav aria-label="Breadcrumb" className="bg-gray-50 py-2 px-4 md:px-8">
+    <nav aria-label="Breadcrumb" className="bg-white py-2 px-4 md:px-8">
       <ol className="flex items-center flex-wrap text-sm">
         <li className="flex items-center">
           <Link href="/" className="text-gray-500 hover:text-[#2aaa8a] flex items-center">

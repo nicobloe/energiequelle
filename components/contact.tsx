@@ -33,7 +33,7 @@ export default function Contact() {
       {/* Unsichtbarer Anker-Punkt für die Navigation */}
       <div id="contact" className="-mt-24 pt-24 invisible absolute"></div>
 
-      <section className="section">
+      <section className="section pt-8 md:pt-12">
         <h2 className="section-title">Kontaktiere uns</h2>
         <p className="section-subtitle">
           Hast du Fragen zu Zinzino-Produkten oder möchtest du mehr über eine Partnerschaft erfahren? Wir sind für dich
@@ -110,6 +110,8 @@ export default function Contact() {
                 <MapPin className="h-6 w-6 text-[#2aaa8a] mr-4" />
                 <div>
                   <h4 className="font-medium">Adresse</h4>
+                  <p className="text-gray-600">Mühlebachstrasse 5</p>
+                  <p className="text-gray-600">6370 Stans</p>
                   <p className="text-gray-600">Schweiz</p>
                 </div>
               </div>
