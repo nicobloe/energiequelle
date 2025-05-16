@@ -6,14 +6,15 @@ import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { useRouter, usePathname } from "next/navigation"
-import { Menu, ChevronDown } from "lucide-react"
+import { Menu, ChevronDown, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { cn } from "@/lib/utils"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("")
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const router = useRouter()
   const pathname = usePathname()
 
@@ -70,6 +71,30 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [pathname])
 
+  // Dropdown-Menü öffnen/schließen
+  const toggleDropdown = (name: string) => {
+    if (openDropdown === name) {
+      setOpenDropdown(null)
+    } else {
+      setOpenDropdown(name)
+    }
+  }
+
+  // Dropdown-Menü schließen, wenn außerhalb geklickt wird
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement
+      if (!target.closest(".dropdown-trigger") && !target.closest(".dropdown-menu")) {
+        setOpenDropdown(null)
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [])
+
   // Optimierte Menüstruktur mit Dropdown-Kategorien
   const navItems = [
     {
@@ -82,8 +107,18 @@ export default function Navbar() {
       name: "Gesundheit",
       isDropdown: true,
       items: [
-        { name: "Stoffwechselkur", href: "/stoffwechselkur", sectionHref: "#stoffwechselkur" },
-        { name: "Darmgesundheit", href: "/blog/gut-health", sectionHref: "#blog" },
+        {
+          name: "Stoffwechselkur",
+          href: "/stoffwechselkur",
+          sectionHref: "#stoffwechselkur",
+          description: "Ganzheitliches Regenerations- und Präventionskonzept",
+        },
+        {
+          name: "Darmgesundheit",
+          href: "/blog/gut-health",
+          sectionHref: "#blog",
+          description: "Alles über die Bedeutung eines gesunden Darms",
+        },
       ],
     },
     {
@@ -96,17 +131,42 @@ export default function Navbar() {
       name: "Erfahrungen",
       isDropdown: true,
       items: [
-        { name: "Erfahrungsberichte", href: "/erfahrungsberichte", sectionHref: "#testimonials" },
-        { name: "Blog", href: "/blog", sectionHref: "#blog" },
+        {
+          name: "Erfahrungsberichte",
+          href: "/erfahrungsberichte",
+          sectionHref: "#testimonials",
+          description: "Erfahrungen unserer Kunden mit Zinzino-Produkten",
+        },
+        {
+          name: "Blog",
+          href: "/blog",
+          sectionHref: "#blog",
+          description: "Informative Artikel zu Gesundheitsthemen",
+        },
       ],
     },
     {
       name: "Kontakt",
       isDropdown: true,
       items: [
-        { name: "Kontaktformular", href: "/contact", sectionHref: "#contact" },
-        { name: "Events", href: "/events", sectionHref: "#events" },
-        { name: "Newsletter", href: "/newsletter", sectionHref: "#newsletter" },
+        {
+          name: "Kontaktformular",
+          href: "/contact",
+          sectionHref: "#contact",
+          description: "Nehmen Sie direkt Kontakt mit uns auf",
+        },
+        {
+          name: "Events",
+          href: "/events",
+          sectionHref: "#events",
+          description: "Informationen zu unseren Veranstaltungen",
+        },
+        {
+          name: "Newsletter",
+          href: "/newsletter",
+          sectionHref: "#newsletter",
+          description: "Abonnieren Sie unseren Newsletter",
+        },
       ],
     },
   ]
@@ -118,14 +178,14 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b bg-white">
       <div className="container flex h-20 items-center justify-between">
         <Link href="/" onClick={handleLogoClick} className="flex items-center">
-          <div className="h-16 flex items-center">
+          <div className="h-14 flex items-center">
             <Image
               src="/images/energiequelle-logo-new.svg"
               alt="energiequelle Logo"
-              width={160}
-              height={64}
+              width={140}
+              height={56}
               priority
-              className="h-auto max-h-12 w-auto object-contain"
+              className="h-auto max-h-10 w-auto object-contain"
               quality={100}
             />
           </div>
@@ -134,29 +194,54 @@ export default function Navbar() {
         <nav className="hidden md:flex items-center space-x-6">
           {navItems.map((item) =>
             item.isDropdown ? (
-              <DropdownMenu key={item.name}>
-                <DropdownMenuTrigger className="flex items-center text-lg font-medium transition-colors hover:text-[#2aaa8a] focus:outline-none">
+              <div key={item.name} className="relative">
+                <button
+                  onClick={() => toggleDropdown(item.name)}
+                  className={cn(
+                    "dropdown-trigger flex items-center text-lg font-medium transition-colors focus:outline-none",
+                    openDropdown === item.name ? "text-[#38C0B2]" : "hover:text-[#38C0B2]",
+                  )}
+                  aria-expanded={openDropdown === item.name}
+                  aria-haspopup="true"
+                >
                   {item.name}
-                  <ChevronDown className="ml-1 h-4 w-4" />
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="w-48">
-                  {item.items?.map((subItem) => (
-                    <DropdownMenuItem key={subItem.name} className="p-0">
-                      <Link
-                        href={isHomePage ? subItem.sectionHref : subItem.href}
-                        onClick={(e) =>
-                          isHomePage && subItem.sectionHref.startsWith("#")
-                            ? scrollToSection(e, subItem.sectionHref)
-                            : null
-                        }
-                        className="w-full px-3 py-2 text-sm hover:text-[#2aaa8a]"
-                      >
-                        {subItem.name}
-                      </Link>
-                    </DropdownMenuItem>
-                  ))}
-                </DropdownMenuContent>
-              </DropdownMenu>
+                  <ChevronDown
+                    className={cn(
+                      "ml-1 h-4 w-4 transition-transform duration-200",
+                      openDropdown === item.name ? "rotate-180" : "",
+                    )}
+                  />
+                </button>
+                {openDropdown === item.name && (
+                  <div
+                    className="dropdown-menu absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-100 overflow-hidden z-50"
+                    onMouseLeave={() => setTimeout(() => setOpenDropdown(null), 200)}
+                  >
+                    <div className="py-2">
+                      {item.items?.map((subItem) => (
+                        <Link
+                          key={subItem.name}
+                          href={isHomePage ? subItem.sectionHref : subItem.href}
+                          onClick={(e) => {
+                            if (isHomePage && subItem.sectionHref.startsWith("#")) {
+                              scrollToSection(e, subItem.sectionHref)
+                              setOpenDropdown(null)
+                            }
+                          }}
+                          className="block px-4 py-3 hover:bg-gray-50 transition-colors group"
+                        >
+                          <div className="font-medium text-gray-900 group-hover:text-[#38C0B2] transition-colors">
+                            {subItem.name}
+                          </div>
+                          {subItem.description && (
+                            <div className="text-sm text-gray-500 mt-0.5">{subItem.description}</div>
+                          )}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
             ) : (
               <Link
                 key={item.name}
@@ -164,19 +249,27 @@ export default function Navbar() {
                 onClick={(e) =>
                   isHomePage && item.sectionHref?.startsWith("#") ? scrollToSection(e, item.sectionHref) : null
                 }
-                className={`text-lg font-medium transition-colors ${
+                className={cn(
+                  "text-lg font-medium transition-colors relative",
                   (isHomePage && activeSection === item.sectionHref) || pathname === item.href
-                    ? "text-[#2aaa8a] font-semibold"
-                    : "hover:text-[#2aaa8a]"
-                }`}
+                    ? "text-[#38C0B2] font-semibold"
+                    : "hover:text-[#38C0B2]",
+                )}
               >
                 {item.name}
+                {((isHomePage && activeSection === item.sectionHref) || pathname === item.href) && (
+                  <span className="absolute -bottom-1.5 left-0 w-full h-0.5 bg-[#38C0B2] rounded-full" />
+                )}
               </Link>
             ),
           )}
-          <Button asChild className="bg-[#2aaa8a] hover:bg-[#239980] text-white font-bold py-2 px-4 rounded">
+          <Button
+            asChild
+            className="bg-[#38C0B2] hover:bg-[#2dadb3] text-white font-bold py-2 px-4 rounded transition-all duration-200 hover:shadow-md flex items-center gap-1.5"
+          >
             <Link href="https://www.zinzino.com/shop/site/CH/de-DE/products" target="_blank" rel="noopener noreferrer">
               Shop besuchen
+              <ExternalLink className="h-3.5 w-3.5" />
             </Link>
           </Button>
         </nav>
@@ -193,8 +286,24 @@ export default function Navbar() {
               {navItems.map((item) =>
                 item.isDropdown ? (
                   <div key={item.name} className="space-y-2">
-                    <div className="font-medium text-lg">{item.name}</div>
-                    <div className="pl-4 border-l-2 border-gray-200 space-y-2">
+                    <button
+                      onClick={() => toggleDropdown(item.name)}
+                      className="flex items-center justify-between w-full text-lg font-medium"
+                    >
+                      <span>{item.name}</span>
+                      <ChevronDown
+                        className={cn(
+                          "h-4 w-4 transition-transform duration-200",
+                          openDropdown === item.name ? "rotate-180" : "",
+                        )}
+                      />
+                    </button>
+                    <div
+                      className={cn(
+                        "pl-4 border-l-2 border-gray-200 space-y-3 overflow-hidden transition-all duration-300",
+                        openDropdown === item.name ? "max-h-96" : "max-h-0",
+                      )}
+                    >
                       {item.items?.map((subItem) => (
                         <Link
                           key={subItem.name}
@@ -205,13 +314,17 @@ export default function Navbar() {
                               setIsOpen(false)
                             }
                           }}
-                          className={`block text-base transition-colors ${
+                          className={cn(
+                            "block transition-colors",
                             (isHomePage && activeSection === subItem.sectionHref) || pathname === subItem.href
-                              ? "text-[#2aaa8a] font-semibold"
-                              : "hover:text-[#2aaa8a]"
-                          }`}
+                              ? "text-[#38C0B2] font-semibold"
+                              : "hover:text-[#38C0B2]",
+                          )}
                         >
-                          {subItem.name}
+                          <div>{subItem.name}</div>
+                          {subItem.description && (
+                            <div className="text-xs text-gray-500 mt-0.5">{subItem.description}</div>
+                          )}
                         </Link>
                       ))}
                     </div>
@@ -226,11 +339,12 @@ export default function Navbar() {
                         setIsOpen(false)
                       }
                     }}
-                    className={`text-lg font-medium transition-colors ${
+                    className={cn(
+                      "text-lg font-medium transition-colors",
                       (isHomePage && activeSection === item.sectionHref) || pathname === item.href
-                        ? "text-[#2aaa8a] font-semibold"
-                        : "hover:text-[#2aaa8a]"
-                    }`}
+                        ? "text-[#38C0B2] font-semibold"
+                        : "hover:text-[#38C0B2]",
+                    )}
                   >
                     {item.name}
                   </Link>
@@ -238,7 +352,7 @@ export default function Navbar() {
               )}
               <Button
                 asChild
-                className="bg-[#2aaa8a] hover:bg-[#239980] text-white font-bold py-2 px-4 rounded w-full mt-4"
+                className="bg-[#38C0B2] hover:bg-[#2dadb3] text-white font-bold py-2 px-4 rounded w-full mt-4 flex items-center justify-center gap-1.5"
               >
                 <Link
                   href="https://www.zinzino.com/shop/site/CH/de-DE/products"
@@ -246,6 +360,7 @@ export default function Navbar() {
                   rel="noopener noreferrer"
                 >
                   Shop besuchen
+                  <ExternalLink className="h-3.5 w-3.5" />
                 </Link>
               </Button>
             </div>

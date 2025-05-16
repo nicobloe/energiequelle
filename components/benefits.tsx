@@ -47,7 +47,7 @@ export default function Benefits() {
           {benefits.map((benefit, index) => (
             <div key={index} className="bg-white p-6 rounded-lg shadow-md">
               <div className="flex items-start mb-4">
-                <div className="bg-[#2aaa8a] p-2 rounded-full mr-4">
+                <div className="bg-[#38C0B2] p-2 rounded-full mr-4">
                   <Check className="h-5 w-5 text-white" />
                 </div>
                 <h3 className="text-xl font-bold">{benefit.title}</h3>
