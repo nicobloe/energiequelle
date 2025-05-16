@@ -221,12 +221,9 @@ export default function Navbar() {
                       {item.items?.map((subItem) => (
                         <Link
                           key={subItem.name}
-                          href={isHomePage ? subItem.sectionHref : subItem.href}
-                          onClick={(e) => {
-                            if (isHomePage && subItem.sectionHref.startsWith("#")) {
-                              scrollToSection(e, subItem.sectionHref)
-                              setOpenDropdown(null)
-                            }
+                          href={subItem.href}
+                          onClick={() => {
+                            setOpenDropdown(null)
                           }}
                           className="block px-4 py-3 hover:bg-gray-50 transition-colors group"
                         >
@@ -245,10 +242,8 @@ export default function Navbar() {
             ) : (
               <Link
                 key={item.name}
-                href={isHomePage ? item.sectionHref : item.href}
-                onClick={(e) =>
-                  isHomePage && item.sectionHref?.startsWith("#") ? scrollToSection(e, item.sectionHref) : null
-                }
+                href={item.href}
+                onClick={() => {}}
                 className={cn(
                   "text-lg font-medium transition-colors relative",
                   (isHomePage && activeSection === item.sectionHref) || pathname === item.href
@@ -265,7 +260,7 @@ export default function Navbar() {
           )}
           <Button
             asChild
-            className="bg-[#38C0B2] hover:bg-[#2dadb3] text-white font-bold py-2 px-4 rounded transition-all duration-200 hover:shadow-md flex items-center gap-1.5"
+            className="bg-[#38C0B2] hover:bg-[#3CD8C8] text-white font-bold py-2 px-4 rounded transition-all duration-200 hover:shadow-md flex items-center gap-1.5"
           >
             <Link href="https://www.zinzino.com/shop/site/CH/de-DE/products" target="_blank" rel="noopener noreferrer">
               Shop besuchen
@@ -307,12 +302,9 @@ export default function Navbar() {
                       {item.items?.map((subItem) => (
                         <Link
                           key={subItem.name}
-                          href={isHomePage ? subItem.sectionHref : subItem.href}
-                          onClick={(e) => {
-                            if (isHomePage && subItem.sectionHref.startsWith("#")) {
-                              scrollToSection(e, subItem.sectionHref)
-                              setIsOpen(false)
-                            }
+                          href={subItem.href}
+                          onClick={() => {
+                            setIsOpen(false)
                           }}
                           className={cn(
                             "block transition-colors",
@@ -332,12 +324,9 @@ export default function Navbar() {
                 ) : (
                   <Link
                     key={item.name}
-                    href={isHomePage ? item.sectionHref : item.href}
-                    onClick={(e) => {
-                      if (isHomePage && item.sectionHref?.startsWith("#")) {
-                        scrollToSection(e, item.sectionHref)
-                        setIsOpen(false)
-                      }
+                    href={item.href}
+                    onClick={() => {
+                      setIsOpen(false)
                     }}
                     className={cn(
                       "text-lg font-medium transition-colors",
@@ -352,7 +341,7 @@ export default function Navbar() {
               )}
               <Button
                 asChild
-                className="bg-[#38C0B2] hover:bg-[#2dadb3] text-white font-bold py-2 px-4 rounded w-full mt-4 flex items-center justify-center gap-1.5"
+                className="bg-[#38C0B2] hover:bg-[#3CD8C8] text-white font-bold py-2 px-4 rounded w-full mt-4 flex items-center justify-center gap-1.5"
               >
                 <Link
                   href="https://www.zinzino.com/shop/site/CH/de-DE/products"

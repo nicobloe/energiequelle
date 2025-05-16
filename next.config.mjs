@@ -12,8 +12,18 @@ const nextConfig = {
     unoptimized: true,
   },
   skipTrailingSlashRedirect: true,
+  // Füge diese Option hinzu, um Probleme mit der JSON-Serialisierung zu beheben
   experimental: {
-    // Entferne esmExternals, da es nicht empfohlen wird
+    serverComponentsExternalPackages: [],
+    serverActions: {
+      bodySizeLimit: '2mb'
+    }
+  },
+  // Füge diese Option hinzu, um sicherzustellen, dass Next.js die richtige Middleware verwendet
+  poweredByHeader: false,
+  // Füge diese Option hinzu, um Probleme mit der API-Handhabung zu beheben
+  api: {
+    responseLimit: false
   }
 }
 

@@ -100,13 +100,11 @@ export default function StoffwechselkurPage() {
 
         <section className="mb-12">
           <h2 className="text-3xl font-bold mb-6">Erfahrungsberichte</h2>
-          <div className="bg-white p-5 rounded-lg shadow-sm border border-gray-100 mb-6">
-            <p className="italic text-gray-700">
-              "Teilnehmer der Kur fühlen sich wieder fitter, leichter und aktiver. Das allgemeine Wohlbefinden wurde
-              durchs Band gesteigert. Die Mitarbeit von Ärzten und Wissenschaftlern bei der Ausarbeitung des Kurkonzepts
-              zeugen von dessen Seriosität und Fundiertheit."
-            </p>
-          </div>
+          <p className="text-lg mb-6">
+            Teilnehmer der Kur fühlen sich wieder fitter, leichter und aktiver. Das allgemeine Wohlbefinden wurde durchs
+            Band gesteigert. Die Mitarbeit von Ärzten und Wissenschaftlern bei der Ausarbeitung des Kurkonzepts zeugen
+            von dessen Seriosität und Fundiertheit.
+          </p>
           <div className="bg-white p-5 rounded-lg shadow-sm border border-gray-100 mb-6">
             <p className="italic text-gray-700">
               "Nach der Stoffwechselkur fühle ich mich wie neugeboren. Ich habe nicht nur 8 kg verloren, sondern auch
