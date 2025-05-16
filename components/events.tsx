@@ -1,0 +1,95 @@
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+import { CalendarIcon, Clock, MapPin } from "lucide-react"
+import Link from "next/link"
+
+const events = [
+  {
+    id: 1,
+    title: "Zinzino Produktpräsentation",
+    description:
+      "Lernen Sie die Vorteile der Zinzino-Produkte kennen und erfahren Sie, wie sie Ihre Gesundheit unterstützen können.",
+    date: "15. Juni 2023",
+    time: "18:00 - 20:00 Uhr",
+    location: "Online Webinar",
+    type: "online",
+  },
+  {
+    id: 2,
+    title: "Gesundheitsworkshop: Balance finden",
+    description: "Ein interaktiver Workshop zur Optimierung Ihrer Gesundheit mit praktischen Tipps für den Alltag.",
+    date: "22. Juni 2023",
+    time: "10:00 - 16:00 Uhr",
+    location: "Zürich, Schweiz",
+    type: "in-person",
+  },
+  {
+    id: 3,
+    title: "Stoffwechselkur: Informationsabend",
+    description:
+      "Alles über unsere erfolgreiche Stoffwechselkur und wie sie Ihnen zu mehr Wohlbefinden verhelfen kann.",
+    date: "30. Juni 2023",
+    time: "19:00 - 21:00 Uhr",
+    location: "Online Webinar",
+    type: "online",
+  },
+]
+
+export default function Events() {
+  return (
+    <>
+      {/* Unsichtbarer Anker-Punkt für die Navigation */}
+      <div id="events" className="-mt-24 pt-24 invisible absolute"></div>
+
+      <section className="section bg-gray-50">
+        <h2 className="section-title">Kommende Events</h2>
+        <p className="section-subtitle">
+          Nehmen Sie an unseren Veranstaltungen teil und erfahren Sie mehr über Gesundheit und Wohlbefinden
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+          {events.map((event) => (
+            <Card key={event.id} className="h-full product-card">
+              <CardContent className="p-6 flex flex-col h-full">
+                <div className="mb-4 pb-4 border-b">
+                  <span
+                    className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-2 ${
+                      event.type === "online" ? "bg-blue-100 text-blue-600" : "bg-green-100 text-green-600"
+                    }`}
+                  >
+                    {event.type === "online" ? "Online" : "Vor Ort"}
+                  </span>
+                  <h3 className="text-xl font-bold mb-2">{event.title}</h3>
+                  <p className="text-gray-600">{event.description}</p>
+                </div>
+
+                <div className="mt-auto">
+                  <div className="flex items-center text-sm text-gray-500 mb-2">
+                    <CalendarIcon className="h-4 w-4 mr-2" />
+                    <span>{event.date}</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500 mb-2">
+                    <Clock className="h-4 w-4 mr-2" />
+                    <span>{event.time}</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500 mb-4">
+                    <MapPin className="h-4 w-4 mr-2" />
+                    <span>{event.location}</span>
+                  </div>
+
+                  <Button className="w-full cta-button">Anmelden</Button>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <Link href="/events">
+            <Button className="cta-button">Alle Events anzeigen</Button>
+          </Link>
+        </div>
+      </section>
+    </>
+  )
+}
