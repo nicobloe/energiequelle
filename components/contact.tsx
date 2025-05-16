@@ -10,7 +10,8 @@ import { Mail, Phone, MapPin } from "lucide-react"
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     message: "",
   })
@@ -25,7 +26,7 @@ export default function Contact() {
     // Hier würde die Logik zum Absenden des Formulars implementiert werden
     console.log("Form submitted:", formData)
     alert("Vielen Dank für deine Nachricht! Wir werden uns in Kürze bei dir melden.")
-    setFormData({ name: "", email: "", message: "" })
+    setFormData({ firstName: "", lastName: "", email: "", message: "" })
   }
 
   return (
@@ -43,18 +44,33 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">
           <div>
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">
-                  Name
-                </label>
-                <Input
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full"
-                />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="firstName" className="block text-sm font-medium mb-2">
+                    Vorname
+                  </label>
+                  <Input
+                    id="firstName"
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={handleChange}
+                    required
+                    className="w-full"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="lastName" className="block text-sm font-medium mb-2">
+                    Name
+                  </label>
+                  <Input
+                    id="lastName"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleChange}
+                    required
+                    className="w-full"
+                  />
+                </div>
               </div>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium mb-2">
