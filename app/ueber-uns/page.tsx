@@ -145,10 +145,10 @@ export default function UeberUnsPage() {
             <div className="bg-white rounded-xl overflow-hidden shadow-lg transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
               <div className="h-64 relative">
                 <Image
-                  src="/images/team/chiara-jud.png"
+                  src="/images/team/chiara-jud-new.png"
                   alt="Chiara Jud - Inhaberin Ladys Gym"
                   fill
-                  className="object-cover object-[center_25%] scale-[0.7]"
+                  className="object-contain object-top"
                 />
               </div>
               <div className="p-6">
