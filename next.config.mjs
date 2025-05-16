@@ -11,7 +11,6 @@ const nextConfig = {
     domains: ['placeholder.com', 'v0.blob.com'],
     unoptimized: true,
   },
-  // Verschiebe skipTrailingSlashRedirect aus experimental auf die oberste Ebene
   skipTrailingSlashRedirect: true,
   experimental: {
     // Entferne esmExternals, da es nicht empfohlen wird
