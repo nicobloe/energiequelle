@@ -5,7 +5,6 @@ import Benefits from "@/components/benefits"
 import Testimonials from "@/components/testimonials"
 import Contact from "@/components/contact"
 import Footer from "@/components/footer"
-import Stoffwechselkur from "@/components/stoffwechselkur"
 import BlogPreview from "@/components/blog-preview"
 import Events from "@/components/events"
 import AboutUs from "@/components/about-us"
@@ -18,7 +17,6 @@ export default function Home() {
       <Hero />
       <Products />
       <Benefits />
-      <Stoffwechselkur />
       <AboutUs />
       <BlogPreview />
       <Testimonials />

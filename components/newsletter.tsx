@@ -11,7 +11,8 @@ import Link from "next/link"
 
 export default function Newsletter() {
   const [email, setEmail] = useState("")
-  const [name, setName] = useState("")
+  const [firstName, setFirstName] = useState("")
+  const [lastName, setLastName] = useState("")
   const [privacyAccepted, setPrivacyAccepted] = useState(false)
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
   const [errorMessage, setErrorMessage] = useState("")
@@ -42,7 +43,8 @@ export default function Newsletter() {
 
       setStatus("success")
       setEmail("")
-      setName("")
+      setFirstName("")
+      setLastName("")
       setPrivacyAccepted(false)
     } catch (error) {
       setStatus("error")
@@ -98,32 +100,45 @@ export default function Newsletter() {
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1 text-left">
-                      Name (optional)
+                    <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1 text-left">
+                      Vorname
                     </label>
                     <Input
-                      id="name"
+                      id="firstName"
                       type="text"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      placeholder="Dein Name"
+                      value={firstName}
+                      onChange={(e) => setFirstName(e.target.value)}
+                      placeholder="Dein Vorname"
                       className="w-full"
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1 text-left">
-                      E-Mail-Adresse *
+                    <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1 text-left">
+                      Nachname
                     </label>
                     <Input
-                      id="email"
-                      type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="deine@email.ch"
-                      required
+                      id="lastName"
+                      type="text"
+                      value={lastName}
+                      onChange={(e) => setLastName(e.target.value)}
+                      placeholder="Dein Nachname"
                       className="w-full"
                     />
                   </div>
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1 text-left">
+                    E-Mail-Adresse *
+                  </label>
+                  <Input
+                    id="email"
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="deine@email.ch"
+                    required
+                    className="w-full"
+                  />
                 </div>
 
                 <div className="flex items-start mt-4">

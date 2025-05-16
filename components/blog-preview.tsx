@@ -10,7 +10,7 @@ const blogPosts = [
     title: "Mehr als nur ein Gefühl - Dein Bauchgefühl gibt den Ton an",
     excerpt:
       "Erfahre, wie du dein Mikrobiom auf natürliche Weise stärken kannst und warum eine gesunde Darmflora entscheidend für dein Wohlbefinden ist.",
-    date: "15. Mai 2023",
+    date: "9. April 2025",
     image: "/images/zinobiotic-smoothie.png",
     url: "/blog/gut-health",
   },
@@ -22,14 +22,6 @@ const blogPosts = [
     date: "5. Februar 2025",
     image: "/images/omega3-health.png",
     url: "/blog/omega3-aging",
-  },
-  {
-    id: 3,
-    title: "Gesunde Ernährung im Alltag integrieren",
-    excerpt:
-      "Praktische Tipps, wie du auch bei einem vollen Terminkalender eine ausgewogene Ernährung beibehalten kannst.",
-    date: "10. April 2023",
-    image: "/healthy-meal-prep.png",
   },
 ]
 
@@ -43,7 +35,7 @@ export default function BlogPreview() {
         <h2 className="section-title">Blog</h2>
         <p className="section-subtitle">Informative Artikel und Tipps rund um Gesundheit, Ernährung und Wohlbefinden</p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
           {blogPosts.map((post) => (
             <Card key={post.id} className="overflow-hidden product-card">
               <div className="h-48 overflow-hidden">
@@ -53,6 +45,7 @@ export default function BlogPreview() {
                   width={500}
                   height={300}
                   className="w-full h-full object-cover"
+                  priority={post.id === 1}
                 />
               </div>
               <CardContent className="p-6">

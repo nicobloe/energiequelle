@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Lightbox from "./lightbox"
+import Image from "next/image"
 
 const products = [
   {
@@ -74,10 +75,13 @@ export default function Products() {
                     className="relative cursor-pointer group"
                     onClick={() => openLightbox(product.image, product.name)}
                   >
-                    <img
+                    <Image
                       src={product.image || "/placeholder.svg"}
                       alt={product.name}
+                      width={250}
+                      height={250}
                       className="max-w-full max-h-[250px] object-contain transition-transform group-hover:scale-105"
+                      priority={product.id === 1}
                     />
                     <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all flex items-center justify-center">
                       <span className="bg-white bg-opacity-80 px-3 py-1 rounded-full text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">

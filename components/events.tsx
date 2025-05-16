@@ -9,7 +9,7 @@ const events = [
     title: "Zinzino Produktpräsentation",
     description:
       "Lernen Sie die Vorteile der Zinzino-Produkte kennen und erfahren Sie, wie sie Ihre Gesundheit unterstützen können.",
-    date: "15. Juni 2023",
+    date: "18. März 2025",
     time: "18:00 - 20:00 Uhr",
     location: "Online Webinar",
     type: "online",
@@ -18,7 +18,7 @@ const events = [
     id: 2,
     title: "Gesundheitsworkshop: Balance finden",
     description: "Ein interaktiver Workshop zur Optimierung Ihrer Gesundheit mit praktischen Tipps für den Alltag.",
-    date: "22. Juni 2023",
+    date: "5. Mai 2025",
     time: "10:00 - 16:00 Uhr",
     location: "Zürich, Schweiz",
     type: "in-person",
@@ -28,7 +28,7 @@ const events = [
     title: "Stoffwechselkur: Informationsabend",
     description:
       "Alles über unsere erfolgreiche Stoffwechselkur und wie sie Ihnen zu mehr Wohlbefinden verhelfen kann.",
-    date: "30. Juni 2023",
+    date: "27. Juni 2025",
     time: "19:00 - 21:00 Uhr",
     location: "Online Webinar",
     type: "online",
