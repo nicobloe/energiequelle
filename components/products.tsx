@@ -40,7 +40,11 @@ const products = [
   },
 ]
 
-export default function Products() {
+interface ProductsProps {
+  layout?: "grid" | "vertical"
+}
+
+export default function Products({ layout = "grid" }: ProductsProps) {
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [selectedImage, setSelectedImage] = useState({ url: "", alt: "" })
 
@@ -52,6 +56,12 @@ export default function Products() {
   const closeLightbox = () => {
     setLightboxOpen(false)
   }
+
+  // Bestimme die Grid-Klassen basierend auf dem Layout-Prop
+  const gridClasses =
+    layout === "vertical"
+      ? "grid grid-cols-1 md:grid-cols-2 gap-8 mt-12"
+      : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12"
 
   return (
     <>
@@ -65,7 +75,7 @@ export default function Products() {
           entwickelt wurden, um Ihre Gesundheit optimal zu unterstützen.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+        <div className={gridClasses}>
           {products.map((product) => (
             <div key={product.id} className="product-card flex flex-col h-full">
               <div className="bg-white p-6 flex items-center justify-center" style={{ minHeight: "280px" }}>

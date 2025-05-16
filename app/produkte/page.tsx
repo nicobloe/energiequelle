@@ -36,7 +36,7 @@ export default function ProduktePage() {
           </div>
         </section>
 
-        <Products />
+        <Products layout="vertical" />
 
         <section className="mt-16">
           <h2 className="text-3xl font-bold mb-6">Personalisierte Gesundheit</h2>
