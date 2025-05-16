@@ -68,7 +68,7 @@ export default function Newsletter() {
             dein Postfach.
           </p>
 
-          <div className="mt-8 bg-white p-8 rounded-lg shadow-md">
+          <div className="mt-8 bg-white p-5 rounded-lg shadow-md">
             {status === "success" ? (
               <div className="text-center py-6">
                 <div className="inline-block p-3 bg-green-100 rounded-full mb-4">

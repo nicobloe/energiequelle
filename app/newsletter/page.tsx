@@ -15,7 +15,7 @@ export default function NewsletterPage() {
             exklusive Angebote.
           </p>
 
-          <div className="bg-white rounded-lg shadow-md p-8">
+          <div className="bg-white rounded-lg shadow-md p-5">
             <Newsletter />
           </div>
         </section>
@@ -44,7 +44,7 @@ export default function NewsletterPage() {
           </div>
         </section>
 
-        <section className="bg-gray-50 p-8 rounded-lg text-center">
+        <section className="bg-gray-50 p-5 rounded-lg text-center">
           <h2 className="text-3xl font-bold mb-4">Häufig gestellte Fragen</h2>
           <div className="text-left max-w-3xl mx-auto space-y-6 mt-6">
             <div>

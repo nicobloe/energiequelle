@@ -87,9 +87,9 @@ export default function GutHealthBlogPost() {
               deinem Darm.
             </p>
 
-            <div className="bg-[#2aaa8a] bg-opacity-10 p-6 rounded-xl my-8">
-              <h3 className="text-xl font-bold mb-4 text-[#2aaa8a]">Wenn dein Mikrobiom im Gleichgewicht ist, dann:</h3>
-              <ul className="list-disc pl-6 space-y-2">
+            <div className="bg-[#2aaa8a] bg-opacity-10 p-4 rounded-xl my-6">
+              <h3 className="text-xl font-bold mb-2 text-[#2aaa8a]">Wenn dein Mikrobiom im Gleichgewicht ist, dann:</h3>
+              <ul className="list-disc pl-6 space-y-1">
                 <li>unterstützt es die Verdauung und Nährstoffaufnahme</li>
                 <li>stärkt es das Immunsystem</li>
                 <li>reguliert es den Blutzucker und Cholesterinspiegel</li>
@@ -140,11 +140,11 @@ export default function GutHealthBlogPost() {
               Verdauung, das Immunsystem und die Entzündungshemmung unterstützen.
             </p>
 
-            <div className="bg-yellow-50 p-6 rounded-xl my-8">
+            <div className="bg-yellow-50 p-4 rounded-xl my-6">
               <p className="text-xl font-bold mb-2">
                 Dennoch nehmen 90% der Menschen täglich nicht genügend Ballaststoffe zu sich!
               </p>
-              <p className="text-lg">
+              <p className="text-base">
                 Die WHO empfiehlt 25 bis 40 Gramm pro Tag, die meisten Menschen nehmen jedoch nur etwa 15 Gramm zu sich.
               </p>
             </div>
@@ -263,11 +263,11 @@ export default function GutHealthBlogPost() {
               Gesundheit.
             </p>
 
-            <div className="bg-[#2aaa8a] bg-opacity-10 p-8 rounded-xl my-10">
-              <p className="text-xl font-bold mb-4">
+            <div className="bg-[#2aaa8a] bg-opacity-10 p-5 rounded-xl my-6">
+              <p className="text-xl font-bold mb-2">
                 Fang noch heute an und lass dich von deinem Bauchgefühl in eine gesündere Zukunft führen!
               </p>
-              <p className="text-lg mb-6">Ich unterstütze dich gerne dabei...</p>
+              <p className="text-base mb-4">Ich unterstütze dich gerne dabei...</p>
               <Button className="cta-button">Kontaktiere mich</Button>
             </div>
           </div>

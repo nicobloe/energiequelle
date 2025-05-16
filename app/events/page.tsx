@@ -131,7 +131,7 @@ export default function EventsPage() {
           </div>
         </section>
 
-        <section className="bg-gray-50 p-8 rounded-lg">
+        <section className="bg-gray-50 p-5 rounded-lg">
           <div className="text-center">
             <h2 className="text-3xl font-bold mb-4">Eigene Veranstaltung organisieren</h2>
             <p className="text-lg mb-6 max-w-3xl mx-auto">

@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -26,7 +28,26 @@ export default function Omega3AgingBlogPost() {
               <span>5. Februar 2025</span>
               <span className="mx-2">•</span>
               <span>Omega-Balance</span>
-              <button className="ml-auto flex items-center text-[#2aaa8a]">
+              <button
+                className="ml-auto flex items-center text-[#2aaa8a] hover:text-[#3CD8C8] transition-colors"
+                onClick={() => {
+                  if (navigator.share) {
+                    navigator
+                      .share({
+                        title: "Omega-3 reduziert laut Schweizer Studie das biologische Alter",
+                        text: "Omega-3-Fettsäuren können laut einer neuen Studie das Altern messbar verlangsamen. Die tägliche Einnahme von einem Gramm Omega-3 verlangsamt die biologische Alterung um bis zu vier Monate.",
+                        url: window.location.href,
+                      })
+                      .catch((error) => console.log("Fehler beim Teilen:", error))
+                  } else {
+                    // Fallback für Browser, die Web Share API nicht unterstützen
+                    navigator.clipboard
+                      .writeText(window.location.href)
+                      .then(() => alert("Link in die Zwischenablage kopiert!"))
+                      .catch(() => alert("Konnte den Link nicht kopieren."))
+                  }
+                }}
+              >
                 <Share2 className="h-5 w-5 mr-1" />
                 <span>Teilen</span>
               </button>
@@ -35,8 +56,8 @@ export default function Omega3AgingBlogPost() {
 
           <div className="mb-10 rounded-xl overflow-hidden shadow-lg">
             <Image
-              src="/images/omega3-health.png"
-              alt="Omega-3 Fettsäuren und gesundes Altern"
+              src="/images/grandfather-with-baby.png"
+              alt="Großvater mit Enkelkind - Generationsübergreifende Gesundheit durch Omega-3"
               width={1200}
               height={600}
               className="w-full h-auto object-cover"
@@ -50,9 +71,9 @@ export default function Omega3AgingBlogPost() {
               biologische Alterung in drei Jahren um bis zu vier Monate.
             </p>
 
-            <div className="bg-gray-50 p-6 rounded-xl my-8">
+            <div className="bg-gray-50 p-4 rounded-xl my-6">
               <p className="text-lg font-medium mb-2">Wichtigste Erkenntnisse der Studie:</p>
-              <ul className="list-disc pl-6 space-y-2">
+              <ul className="list-disc pl-6 space-y-1">
                 <li>Tägliche Einnahme von 1g Omega-3 verlangsamt die biologische Alterung</li>
                 <li>Kombination mit Vitamin D und Bewegung verstärkt den Effekt</li>
                 <li>Ergebnisse basieren auf der grössten Altersstudie Europas</li>
@@ -91,7 +112,7 @@ export default function Omega3AgingBlogPost() {
                   <li>Bestimmte Gemüsesorten wie Spinat</li>
                 </ul>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow-md">
+              <div className="bg-white p-4 border border-gray-200 rounded-xl my-6">
                 <h4 className="font-bold text-[#2aaa8a] mb-3">Wussten Sie?</h4>
                 <p className="text-gray-700">
                   Der menschliche Körper kann Omega-3-Fettsäuren nicht selbst herstellen, daher müssen sie über die
@@ -117,14 +138,14 @@ export default function Omega3AgingBlogPost() {
               einräumten.
             </p>
 
-            <div className="bg-[#2aaa8a] bg-opacity-10 p-6 rounded-xl my-8">
-              <h3 className="text-xl font-bold mb-4 text-[#2aaa8a]">Warum ist das biologische Alter wichtig?</h3>
-              <p className="text-lg mb-4">
+            <div className="bg-[#2aaa8a] bg-opacity-10 p-4 rounded-xl my-6">
+              <h3 className="text-xl font-bold mb-2 text-[#2aaa8a]">Warum ist das biologische Alter wichtig?</h3>
+              <p className="text-base mb-3">
                 Das biologische Alter gibt Aufschluss darüber, wie schnell unser Körper altert, unabhängig von unserem
                 chronologischen Alter. Es ist ein besserer Indikator für unsere Gesundheit und Lebenserwartung als das
                 Geburtsdatum.
               </p>
-              <p className="text-lg">
+              <p className="text-base">
                 Faktoren wie Ernährung, Bewegung, Stress und Umwelteinflüsse können das biologische Alter beeinflussen.
                 Die Studie zeigt, dass gezielte Interventionen wie die Einnahme von Omega-3 diesen Prozess positiv
                 beeinflussen können.
@@ -145,8 +166,8 @@ export default function Omega3AgingBlogPost() {
               Gesundheit und das Wohlbefinden, insbesondere im Hinblick auf gesundes Altern.
             </p>
 
-            <div className="bg-white p-6 border border-gray-200 rounded-xl my-10">
-              <h3 className="text-xl font-bold mb-4">Quelle</h3>
+            <div className="bg-white p-4 border border-gray-200 rounded-xl my-6">
+              <h3 className="text-lg font-bold mb-2">Quelle</h3>
               <p className="text-gray-700">
                 Dieser Artikel basiert auf Informationen von Swiss Info (SWI). Die Originalmeldung wurde am 4. Februar
                 2025 veröffentlicht. Die vollständige Studie ist in der Fachzeitschrift "Nature Aging" erschienen.
@@ -167,9 +188,9 @@ export default function Omega3AgingBlogPost() {
               gezielt verbessern.
             </p>
 
-            <div className="bg-[#2aaa8a] bg-opacity-10 p-8 rounded-xl my-10">
-              <p className="text-xl font-bold mb-4">Möchten Sie mehr über Ihre persönliche Omega-Balance erfahren?</p>
-              <p className="text-lg mb-6">
+            <div className="bg-[#2aaa8a] bg-opacity-10 p-5 rounded-xl my-6">
+              <p className="text-xl font-bold mb-2">Möchten Sie mehr über Ihre persönliche Omega-Balance erfahren?</p>
+              <p className="text-base mb-4">
                 Kontaktieren Sie mich für eine individuelle Beratung und erfahren Sie, wie Sie Ihre Omega-3-Versorgung
                 optimieren können.
               </p>

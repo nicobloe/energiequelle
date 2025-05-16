@@ -45,21 +45,21 @@ export default function UeberUnsPage() {
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-6">Unsere Werte</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="bg-white p-4 rounded-lg shadow-md">
               <h3 className="text-xl font-bold mb-3 text-[#2aaa8a]">Qualität</h3>
               <p>
                 Wir setzen auf höchste Qualitätsstandards bei allen Produkten und Dienstleistungen, die wir anbieten.
                 Nur das Beste ist gut genug für unsere Kunden.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="bg-white p-4 rounded-lg shadow-md">
               <h3 className="text-xl font-bold mb-3 text-[#2aaa8a]">Wissenschaftliche Fundierung</h3>
               <p>
                 Alle unsere Empfehlungen und Produkte basieren auf wissenschaftlichen Erkenntnissen und werden
                 kontinuierlich durch neue Forschungsergebnisse verbessert.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="bg-white p-4 rounded-lg shadow-md">
               <h3 className="text-xl font-bold mb-3 text-[#2aaa8a]">Persönliche Betreuung</h3>
               <p>
                 Wir glauben an individuelle Lösungen und bieten jedem Kunden eine persönliche Betreuung, die auf seine

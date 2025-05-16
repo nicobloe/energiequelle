@@ -62,7 +62,7 @@ export default function StoffwechselkurPage() {
 
         <section className="mb-12">
           <h2 className="text-3xl font-bold mb-6">Ablauf der Stoffwechselkur</h2>
-          <div className="bg-gray-50 p-8 rounded-lg">
+          <div className="bg-gray-50 p-5 rounded-lg">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="bg-white p-6 rounded-lg shadow-sm">
                 <div className="bg-[#2aaa8a] rounded-full w-12 h-12 flex items-center justify-center text-white font-bold mb-4">
@@ -105,7 +105,7 @@ export default function StoffwechselkurPage() {
             Band gesteigert. Die Mitarbeit von Ärzten und Wissenschaftlern bei der Ausarbeitung des Kurkonzepts zeugen
             von dessen Seriosität und Fundiertheit.
           </p>
-          <div className="bg-white p-5 rounded-lg shadow-sm border border-gray-100 mb-6">
+          <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 mb-5">
             <p className="italic text-gray-700">
               "Nach der Stoffwechselkur fühle ich mich wie neugeboren. Ich habe nicht nur 8 kg verloren, sondern auch
               viel mehr Energie im Alltag. Meine Verdauungsprobleme sind verschwunden und mein Schlaf hat sich deutlich

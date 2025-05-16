@@ -64,21 +64,21 @@ export default function AboutUs() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-          <div className="bg-white p-6 rounded-lg shadow-md">
+          <div className="bg-white p-4 rounded-lg shadow-md">
             <h3 className="text-xl font-bold mb-3 text-[#2aaa8a]">Unsere Mission</h3>
             <p>
               Wir möchten Menschen dabei unterstützen, durch optimale Ernährung und Nahrungsergänzung ein gesünderes,
               aktiveres und erfüllteres Leben zu führen.
             </p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
+          <div className="bg-white p-4 rounded-lg shadow-md">
             <h3 className="text-xl font-bold mb-3 text-[#2aaa8a]">Unsere Werte</h3>
             <p>
               Qualität, Transparenz und wissenschaftliche Fundierung stehen im Mittelpunkt unserer Arbeit. Wir glauben
               an nachhaltige Gesundheitslösungen und persönliche Betreuung.
             </p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
+          <div className="bg-white p-4 rounded-lg shadow-md">
             <h3 className="text-xl font-bold mb-3 text-[#2aaa8a]">Unser Versprechen</h3>
             <p>
               Wir versprechen dir nur Produkte anzubieten, von denen wir selbst überzeugt sind und die wir auch selbst

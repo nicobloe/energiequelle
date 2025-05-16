@@ -20,7 +20,7 @@ const blogPosts = [
     excerpt:
       "Omega-3-Fettsäuren können laut einer neuen Studie das Altern messbar verlangsamen. Die tägliche Einnahme von einem Gramm Omega-3 verlangsamt die biologische Alterung um bis zu vier Monate.",
     date: "5. Februar 2025",
-    image: "/images/omega3-health.png",
+    image: "/images/grandfather-with-baby.png",
     url: "/blog/omega3-aging",
   },
 ]

@@ -89,7 +89,7 @@ export default function Contact() {
             </form>
           </div>
 
-          <div className="bg-gray-50 p-8 rounded-lg">
+          <div className="bg-gray-50 p-5 rounded-lg">
             <h3 className="text-2xl font-bold mb-6">Kontaktinformationen</h3>
             <div className="space-y-6">
               <div className="flex items-start">
