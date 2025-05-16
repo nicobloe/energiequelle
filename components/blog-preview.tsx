@@ -16,10 +16,12 @@ const blogPosts = [
   },
   {
     id: 2,
-    title: "Stoffwechsel aktivieren: Tipps und Tricks",
-    excerpt: "Mit diesen einfachen Methoden kannst du deinen Stoffwechsel ankurbeln und deine Energielevels steigern.",
-    date: "28. April 2023",
-    image: "/images/metabolism-boost.png",
+    title: "Omega-3 reduziert laut Schweizer Studie das biologische Alter",
+    excerpt:
+      "Omega-3-Fettsäuren können laut einer neuen Studie das Altern messbar verlangsamen. Die tägliche Einnahme von einem Gramm Omega-3 verlangsamt die biologische Alterung um bis zu vier Monate.",
+    date: "5. Februar 2025",
+    image: "/images/omega3-health.png",
+    url: "/blog/omega3-aging",
   },
   {
     id: 3,
@@ -56,7 +58,7 @@ export default function BlogPreview() {
               <CardContent className="p-6">
                 <div className="flex items-center text-sm text-gray-500 mb-2">
                   <CalendarIcon className="h-4 w-4 mr-2" />
-                  <span>April 2025</span>
+                  <span>{post.date}</span>
                 </div>
                 <h3 className="text-xl font-bold mb-2">{post.title}</h3>
                 <p className="text-gray-600 mb-4">{post.excerpt}</p>

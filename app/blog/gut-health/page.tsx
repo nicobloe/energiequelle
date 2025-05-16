@@ -23,7 +23,7 @@ export default function GutHealthBlogPost() {
             </h1>
             <div className="flex items-center text-gray-500 mb-6">
               <CalendarIcon className="h-5 w-5 mr-2" />
-              <span>15. Mai 2023</span>
+              <span>9. April 2025</span>
               <span className="mx-2">•</span>
               <span>Darmgesundheit</span>
               <button className="ml-auto flex items-center text-[#2aaa8a]">
@@ -70,22 +70,6 @@ export default function GutHealthBlogPost() {
               spielt auch eine Schlüsselrolle für die Immunität. Jedes Mal, wenn du isst, entscheiden Billionen von
               Bakterien in deinem Darm, was gut für dich ist und was nicht.
             </p>
-
-            <div className="bg-gray-50 p-6 rounded-xl my-10">
-              <Image
-                src="/images/gut-brain-connection.png"
-                alt="Darm-Hirn-Verbindung"
-                width={800}
-                height={400}
-                className="w-full h-auto rounded-lg mb-6"
-              />
-              <p className="text-lg mb-0">
-                Die guten Bakterien reduzieren Entzündungen und unterstützen dein Immunsystem, während schädliche
-                Bakterien Probleme wie Blähungen, Müdigkeit und sogar Hautprobleme verursachen können. Die guten
-                Bakterien, bekannt als Probiotika, helfen dir bei der Nährstoffverdauung, lindern Entzündungen und
-                stärken dein Immunsystem.
-              </p>
-            </div>
 
             <p className="text-lg mb-8">
               Eine Mischung aus guten und schlechten Bakterien ist völlig normal, aber eine Ernährung mit viel Zucker,
@@ -178,8 +162,8 @@ export default function GutHealthBlogPost() {
                 </div>
                 <div>
                   <Image
-                    src="/images/fiber-foods.png"
-                    alt="Ballaststoffreiche Lebensmittel"
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-5AfRxKGN479xUkxuHum4kXzpdze5NW.png"
+                    alt="Ballaststoffreiche Lebensmittel: Obst, Gemüse, Nüsse, Vollkornprodukte und Hülsenfrüchte"
                     width={500}
                     height={400}
                     className="rounded-xl"
@@ -301,10 +285,23 @@ export default function GutHealthBlogPost() {
                 </div>
               </div>
               <div className="border rounded-lg overflow-hidden">
-                <div className="h-40 bg-gray-100"></div>
+                <div className="h-40 bg-gray-100 relative overflow-hidden">
+                  <Image
+                    src="/images/omega3-health.png"
+                    alt="Omega-3 Fettsäuren und gesundes Altern"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
                 <div className="p-4">
-                  <h4 className="font-bold mb-2">Gesunde Ernährung im Alltag integrieren</h4>
-                  <Link href="#" className="text-[#2aaa8a] text-sm hover:underline">
+                  <div className="text-xs text-gray-500 mb-1">5. Februar 2025</div>
+                  <h4 className="font-bold mb-2">Omega-3 reduziert laut Schweizer Studie das biologische Alter</h4>
+                  <p className="text-sm text-gray-600 mb-2 line-clamp-2">
+                    Omega-3-Fettsäuren können laut einer neuen Studie der Universität Zürich das Altern messbar
+                    verlangsamen. Die tägliche Einnahme von einem Gramm Omega-3 verlangsamt die biologische Alterung in
+                    drei Jahren um bis zu vier Monate.
+                  </p>
+                  <Link href="/blog/omega3-aging" className="text-[#2aaa8a] text-sm hover:underline">
                     Weiterlesen
                   </Link>
                 </div>

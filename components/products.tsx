@@ -65,10 +65,10 @@ export default function Products() {
           entwickelt wurden, um Ihre Gesundheit optimal zu unterstützen.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
           {products.map((product) => (
             <div key={product.id} className="product-card flex flex-col h-full">
-              <div className="bg-white p-4 flex items-center justify-center" style={{ minHeight: "250px" }}>
+              <div className="bg-white p-6 flex items-center justify-center" style={{ minHeight: "280px" }}>
                 <div className="relative w-full h-full flex items-center justify-center">
                   <div
                     className="relative cursor-pointer group"
@@ -77,7 +77,7 @@ export default function Products() {
                     <img
                       src={product.image || "/placeholder.svg"}
                       alt={product.name}
-                      className="max-w-full max-h-[220px] object-contain transition-transform group-hover:scale-105"
+                      className="max-w-full max-h-[250px] object-contain transition-transform group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all flex items-center justify-center">
                       <span className="bg-white bg-opacity-80 px-3 py-1 rounded-full text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
@@ -87,9 +87,9 @@ export default function Products() {
                   </div>
                 </div>
               </div>
-              <div className="product-card-content flex flex-col flex-grow">
-                <h3 className="text-xl font-bold mb-2">{product.name}</h3>
-                <p className="text-gray-600 mb-4 flex-grow text-left hyphens-auto leading-relaxed" lang="de">
+              <div className="product-card-content flex flex-col flex-grow p-6">
+                <h3 className="text-2xl font-bold mb-3">{product.name}</h3>
+                <p className="text-gray-600 mb-5 flex-grow text-left hyphens-auto leading-relaxed" lang="de">
                   {product.description}
                 </p>
                 <Link href={product.link} target="_blank" rel="noopener noreferrer" className="w-full">
