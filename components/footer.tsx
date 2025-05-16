@@ -96,11 +96,6 @@ export default function Footer() {
                   AGB
                 </Link>
               </li>
-              <li>
-                <Link href="/widerrufsrecht" className="text-gray-400 hover:text-[#2aaa8a]">
-                  Widerrufsrecht
-                </Link>
-              </li>
             </ul>
           </div>
 

@@ -150,7 +150,7 @@ export default function Newsletter() {
                   />
                   <label htmlFor="privacy" className="ml-2 text-sm text-gray-600 text-left">
                     Ich akzeptiere die{" "}
-                    <a href="#" className="text-[#2aaa8a] hover:underline">
+                    <a href="/datenschutz" className="text-[#2aaa8a] hover:underline">
                       Datenschutzbestimmungen
                     </a>{" "}
                     und bin damit einverstanden, dass meine Daten zur Bearbeitung meiner Anfrage elektronisch erhoben

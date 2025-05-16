@@ -274,7 +274,7 @@ export default function GutHealthBlogPost() {
 
           <div className="border-t border-gray-200 mt-16 pt-8">
             <h3 className="text-2xl font-bold mb-6">Weitere Artikel, die dich interessieren könnten</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="border rounded-lg overflow-hidden">
                 <div className="h-40 bg-gray-100"></div>
                 <div className="p-4">
@@ -302,15 +302,6 @@ export default function GutHealthBlogPost() {
                     drei Jahren um bis zu vier Monate.
                   </p>
                   <Link href="/blog/omega3-aging" className="text-[#2aaa8a] text-sm hover:underline">
-                    Weiterlesen
-                  </Link>
-                </div>
-              </div>
-              <div className="border rounded-lg overflow-hidden">
-                <div className="h-40 bg-gray-100"></div>
-                <div className="p-4">
-                  <h4 className="font-bold mb-2">Die Kraft der Omega-3-Fettsäuren</h4>
-                  <Link href="#" className="text-[#2aaa8a] text-sm hover:underline">
                     Weiterlesen
                   </Link>
                 </div>
