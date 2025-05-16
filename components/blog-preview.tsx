@@ -45,7 +45,6 @@ export default function BlogPreview() {
                   width={500}
                   height={300}
                   className="w-full h-full object-cover"
-                  priority={post.id === 1}
                 />
               </div>
               <CardContent className="p-6">
