@@ -18,7 +18,7 @@ export default function PageLayout({ children, title, description }: PageLayoutP
           <Breadcrumb />
           <div className="container mx-auto px-4 py-6 md:py-8">
             <div className="max-w-4xl mx-auto">
-              <h1 className="text-3xl md:text-4xl font-bold mb-3">{title}</h1>
+              <h1 className="text-3xl md:text-4xl font-bold mb-3">{title === "Über uns" ? "Über mich" : title}</h1>
               {description && <p className="text-lg text-gray-600 mt-4 max-w-3xl">{description}</p>}
             </div>
           </div>
