@@ -5,7 +5,12 @@ import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import ScrollToTop from "@/components/scroll-to-top"
 
-const inter = Inter({ subsets: ["latin"] })
+// Optimiertes Font-Loading mit display: swap
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  preload: true,
+})
 
 export const metadata: Metadata = {
   title: "energiequelle | Zinzino Partner",
@@ -20,6 +25,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de">
+      <head>
+        {/* Preload kritische Assets */}
+        <link rel="preload" href="/images/energiequelle-logo-new.svg" as="image" type="image/svg+xml" />
+        <link rel="preload" href="/images/zinzino-products-hero.png" as="image" />
+      </head>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <ScrollToTop />

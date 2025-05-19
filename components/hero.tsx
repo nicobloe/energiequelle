@@ -8,12 +8,13 @@ export default function Hero() {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
+            {/* Optimiertes LCP-Element mit reduziertem Markup */}
             <h1 className="text-5xl md:text-6xl font-bold mb-6">Zinzino</h1>
             <h2 className="text-3xl md:text-4xl font-medium mb-6">Deine Gesundheit, deine Chance!</h2>
             <p className="text-xl mb-8">Wir unterstützen dich dabei.</p>
             <p className="text-lg mb-8">
               Entdecke die Premium-Nahrungsergänzungsmittel von Zinzino für ein ausgewogenes Leben. Als offizieller
-              Partner bieten wir dir Zugang zu hochwertigen Produkten für deine Gesundheit.
+              Partner biete ich dir Zugang zu hochwertigen Produkten für deine Gesundheit.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild className="cta-button">
@@ -21,16 +22,20 @@ export default function Hero() {
                   href="https://www.zinzino.com/shop/site/CH/de-DE/products"
                   target="_blank"
                   rel="noopener noreferrer"
+                  prefetch={false}
                 >
                   Produkte entdecken
                 </Link>
               </Button>
               <Button asChild variant="outline" className="border-[#2aaa8a] text-[#2aaa8a]">
-                <Link href="#benefits">Mehr erfahren</Link>
+                <Link href="#benefits" prefetch={false}>
+                  Mehr erfahren
+                </Link>
               </Button>
             </div>
           </div>
           <div className="relative">
+            {/* Optimiertes Bild mit priority und optimierten Größen */}
             <Image
               src="/images/zinzino-products-hero.png"
               alt="Zinzino BalanceOil+ und BalanceTest mit natürlichen Zutaten"
@@ -38,6 +43,8 @@ export default function Hero() {
               height={500}
               className="rounded-lg shadow-lg object-cover"
               priority
+              sizes="(max-width: 768px) 100vw, 50vw"
+              loading="eager"
             />
             <div className="absolute -bottom-4 -right-4 bg-white p-3 rounded-lg shadow-md hidden md:block">
               <div className="text-[#2aaa8a] font-bold text-lg">Natürlich. Wissenschaftlich. Effektiv.</div>

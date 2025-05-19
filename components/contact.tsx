@@ -35,9 +35,9 @@ export default function Contact() {
       <div id="contact" className="-mt-24 pt-24 invisible absolute"></div>
 
       <section className="section pt-8 md:pt-12">
-        <h2 className="section-title">Kontaktiere uns</h2>
+        <h2 className="section-title">Kontaktiere mich</h2>
         <p className="section-subtitle">
-          Hast du Fragen zu Zinzino-Produkten oder möchtest du mehr über eine Partnerschaft erfahren? Wir sind für dich
+          Hast du Fragen zu Zinzino-Produkten oder möchtest du mehr über eine Partnerschaft erfahren? Ich bin für dich
           da!
         </p>
 

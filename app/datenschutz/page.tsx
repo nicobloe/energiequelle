@@ -15,6 +15,7 @@ export default function DatenschutzPage() {
           <div className="bg-white p-6 rounded-lg shadow-sm mb-8">
             <h3 className="text-xl font-bold mb-4">Verantwortliche Stelle</h3>
             <p className="mb-1">Verantwortlich für die Datenverarbeitung auf dieser Website ist:</p>
+            <p className="mb-1">Erich Zwyssig</p>
             <p className="mb-1">energieQuelle</p>
             <p className="mb-1">Mühlebachstrasse 5</p>
             <p className="mb-1">6370 Stans</p>

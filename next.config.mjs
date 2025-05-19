@@ -9,6 +9,8 @@ const nextConfig = {
   },
   images: {
     domains: ['placeholder.com', 'v0.blob.com'],
+    formats: ['image/avif', 'image/webp'],
+    minimumCacheTTL: 60,
     unoptimized: true,
   },
   skipTrailingSlashRedirect: true,
@@ -16,11 +18,14 @@ const nextConfig = {
   experimental: {
     serverActions: {
       bodySizeLimit: '2mb'
-    }
+    },
+    optimizeCss: true,
+    optimizePackageImports: ['lucide-react'],
   },
   // Verschoben von experimental.serverComponentsExternalPackages
   serverExternalPackages: [],
-  poweredByHeader: false
+  poweredByHeader: false,
+  compress: true,
 }
 
 export default nextConfig

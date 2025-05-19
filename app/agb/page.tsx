@@ -15,7 +15,8 @@ export default function AGBPage() {
             <h3 className="text-xl font-bold mb-4">1. Geltungsbereich</h3>
             <p className="mb-4">
               1.1 Diese Allgemeinen Geschäftsbedingungen (nachfolgend "AGB") gelten für sämtliche Verträge zwischen
-              energieQuelle (nachfolgend "wir" oder "uns") und unseren Kunden (nachfolgend "Kunde" oder "Sie").
+              Erich Zwyssig, energieQuelle (nachfolgend "ich" oder "mir") und meinen Kunden (nachfolgend "Kunde" oder
+              "Sie").
             </p>
             <p className="mb-4">
               1.2 Wir sind offizieller Partner von Zinzino und vermitteln deren Produkte. Der Verkauf der Produkte

@@ -20,10 +20,7 @@ export default function ImpressumPage() {
 
           <div className="bg-white p-6 rounded-lg shadow-sm mb-8">
             <h3 className="text-xl font-bold mb-4">Vertretungsberechtigte Person</h3>
-            <p className="mb-4">[Name der vertretungsberechtigten Person einfügen]</p>
-            <p className="text-sm text-gray-600 italic">
-              Hinweis: Die für den Inhalt verantwortliche Person muss namentlich genannt werden.
-            </p>
+            <p className="mb-4">Erich Zwyssig</p>
           </div>
 
           <div className="bg-white p-6 rounded-lg shadow-sm mb-8">

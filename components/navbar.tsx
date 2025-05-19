@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, lazy, Suspense } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { useRouter, usePathname } from "next/navigation"
@@ -11,10 +11,14 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { cn } from "@/lib/utils"
 
+// Lazy-load der Sheet-Komponente für mobile Navigation
+const MobileNavContent = lazy(() => import("./mobile-nav-content"))
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("")
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
+  const [isMobileNavLoaded, setIsMobileNavLoaded] = useState(false)
   const router = useRouter()
   const pathname = usePathname()
 
@@ -95,6 +99,12 @@ export default function Navbar() {
     }
   }, [])
 
+  // Lazy-load der mobilen Navigation
+  const handleMobileNavOpen = () => {
+    setIsMobileNavLoaded(true)
+    setIsOpen(true)
+  }
+
   // Optimierte Menüstruktur mit Dropdown-Kategorien
   const navItems = [
     {
@@ -122,7 +132,7 @@ export default function Navbar() {
       ],
     },
     {
-      name: "Über uns",
+      name: "Über mich",
       href: "/ueber-uns",
       sectionHref: "#persoenlich",
       isDropdown: false,
@@ -271,88 +281,25 @@ export default function Navbar() {
 
         <Sheet>
           <SheetTrigger asChild className="md:hidden">
-            <Button variant="outline" size="icon">
+            <Button variant="outline" size="icon" onClick={handleMobileNavOpen}>
               <Menu className="h-6 w-6" />
               <span className="sr-only">Menü öffnen</span>
             </Button>
           </SheetTrigger>
           <SheetContent>
-            <div className="flex flex-col space-y-4 mt-8">
-              {navItems.map((item) =>
-                item.isDropdown ? (
-                  <div key={item.name} className="space-y-2">
-                    <button
-                      onClick={() => toggleDropdown(item.name)}
-                      className="flex items-center justify-between w-full text-lg font-medium"
-                    >
-                      <span>{item.name}</span>
-                      <ChevronDown
-                        className={cn(
-                          "h-4 w-4 transition-transform duration-200",
-                          openDropdown === item.name ? "rotate-180" : "",
-                        )}
-                      />
-                    </button>
-                    <div
-                      className={cn(
-                        "pl-4 border-l-2 border-gray-200 space-y-3 overflow-hidden transition-all duration-300",
-                        openDropdown === item.name ? "max-h-96" : "max-h-0",
-                      )}
-                    >
-                      {item.items?.map((subItem) => (
-                        <Link
-                          key={subItem.name}
-                          href={subItem.href}
-                          onClick={() => {
-                            setIsOpen(false)
-                          }}
-                          className={cn(
-                            "block transition-colors",
-                            (isHomePage && activeSection === subItem.sectionHref) || pathname === subItem.href
-                              ? "text-[#38C0B2] font-semibold"
-                              : "hover:text-[#38C0B2]",
-                          )}
-                        >
-                          <div>{subItem.name}</div>
-                          {subItem.description && (
-                            <div className="text-xs text-gray-500 mt-0.5">{subItem.description}</div>
-                          )}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                ) : (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    onClick={() => {
-                      setIsOpen(false)
-                    }}
-                    className={cn(
-                      "text-lg font-medium transition-colors",
-                      (isHomePage && activeSection === item.sectionHref) || pathname === item.href
-                        ? "text-[#38C0B2] font-semibold"
-                        : "hover:text-[#38C0B2]",
-                    )}
-                  >
-                    {item.name}
-                  </Link>
-                ),
-              )}
-              <Button
-                asChild
-                className="bg-[#38C0B2] hover:bg-[#3CD8C8] text-white font-bold py-2 px-4 rounded w-full mt-4 flex items-center justify-center gap-1.5"
-              >
-                <Link
-                  href="https://www.zinzino.com/shop/site/CH/de-DE/products"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Shop besuchen
-                  <ExternalLink className="h-3.5 w-3.5" />
-                </Link>
-              </Button>
-            </div>
+            {isMobileNavLoaded ? (
+              <Suspense fallback={<div>Wird geladen...</div>}>
+                <MobileNavContent navItems={navItems} isHomePage={isHomePage} activeSection={activeSection} />
+              </Suspense>
+            ) : (
+              <div className="flex flex-col space-y-4 mt-8">
+                <div className="animate-pulse h-8 bg-gray-200 rounded w-1/2 mb-2"></div>
+                <div className="animate-pulse h-8 bg-gray-200 rounded w-1/3 mb-2"></div>
+                <div className="animate-pulse h-8 bg-gray-200 rounded w-2/3 mb-2"></div>
+                <div className="animate-pulse h-8 bg-gray-200 rounded w-1/2 mb-2"></div>
+                <div className="animate-pulse h-8 bg-gray-200 rounded w-3/4 mb-2"></div>
+              </div>
+            )}
           </SheetContent>
         </Sheet>
       </div>
