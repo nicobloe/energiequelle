@@ -19,7 +19,6 @@ const nextConfig = {
     serverActions: {
       bodySizeLimit: '2mb'
     },
-    optimizeCss: true,
     optimizePackageImports: ['lucide-react'],
   },
   // Verschoben von experimental.serverComponentsExternalPackages
