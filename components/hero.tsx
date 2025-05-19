@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
-            {/* Optimiertes LCP-Element mit reduziertem Markup */}
+            {/* Optimized heading with reduced nesting */}
             <h1 className="text-5xl md:text-6xl font-bold mb-6">Zinzino</h1>
             <h2 className="text-3xl md:text-4xl font-medium mb-6">Deine Gesundheit, deine Chance!</h2>
             <p className="text-xl mb-8">Wir unterstützen dich dabei.</p>
@@ -35,17 +35,22 @@ export default function Hero() {
             </div>
           </div>
           <div className="relative">
-            {/* Optimiertes Bild mit priority und optimierten Größen */}
-            <Image
-              src="/images/zinzino-products-hero.png"
-              alt="Zinzino BalanceOil+ und BalanceTest mit natürlichen Zutaten"
-              width={600}
-              height={500}
-              className="rounded-lg shadow-lg object-cover"
-              priority
-              sizes="(max-width: 768px) 100vw, 50vw"
-              loading="eager"
-            />
+            {/* Optimized image with explicit width/height, proper loading priority, and placeholder */}
+            <div className="aspect-w-6 aspect-h-5 bg-gray-100 rounded-lg overflow-hidden">
+              <Image
+                src="/images/zinzino-products-hero.png"
+                alt="Zinzino BalanceOil+ und BalanceTest mit natürlichen Zutaten"
+                width={600}
+                height={500}
+                className="rounded-lg shadow-lg object-cover"
+                priority
+                sizes="(max-width: 768px) 100vw, 50vw"
+                loading="eager"
+                fetchPriority="high"
+                placeholder="blur"
+                blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgNjAwIDUwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2YzZjRmNiIvPjwvc3ZnPg=="
+              />
+            </div>
             <div className="absolute -bottom-4 -right-4 bg-white p-3 rounded-lg shadow-md hidden md:block">
               <div className="text-[#2aaa8a] font-bold text-lg">Natürlich. Wissenschaftlich. Effektiv.</div>
               <div className="text-gray-600 text-sm">Premium-Nahrungsergänzung aus Norwegen</div>
