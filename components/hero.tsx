@@ -17,16 +17,18 @@ export default function Hero() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild className="cta-button">
-                <Link
-                  href="https://www.zinzino.com/shop/site/CH/de-DE/products"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <Link href="https://www.zinzino.com/2020232820" target="_blank" rel="noopener noreferrer">
                   Produkte entdecken
                 </Link>
               </Button>
               <Button asChild variant="outline" className="border-[#2aaa8a] text-[#2aaa8a]">
-                <Link href="#benefits">Mehr erfahren</Link>
+                <Link
+                  href="https://www.zinzino.com/2020232820/ch/de-de/explore/balance-concept/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Mehr erfahren
+                </Link>
               </Button>
             </div>
           </div>

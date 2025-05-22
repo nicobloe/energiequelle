@@ -102,7 +102,12 @@ export default function Products({ layout = "grid" }: ProductsProps) {
                 <p className="text-gray-600 mb-5 flex-grow text-left hyphens-auto leading-relaxed" lang="de">
                   {product.description}
                 </p>
-                <Link href={product.link} target="_blank" rel="noopener noreferrer" className="w-full">
+                <Link
+                  href="https://www.zinzino.com/shop/2020232820/CH/de-DE/products/shop/skin-nutrition/302800/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full"
+                >
                   <Button className="cta-button w-full mt-auto">Mehr erfahren</Button>
                 </Link>
               </div>
