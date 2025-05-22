@@ -20,27 +20,52 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-4">Produkte</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/produkte" className="text-gray-400 hover:text-[#2aaa8a]">
+                <Link
+                  href="https://www.zinzino.com/shop/2020232820/CH/de-DE/products/shop/omega-supplements/300000/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-[#2aaa8a]"
+                >
                   BalanceOil+
                 </Link>
               </li>
               <li>
-                <Link href="/produkte" className="text-gray-400 hover:text-[#2aaa8a]">
+                <Link
+                  href="https://www.zinzino.com/shop/2020232820/CH/de-DE/products/shop/immune-system-supplements/301000/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-[#2aaa8a]"
+                >
                   Viva+
                 </Link>
               </li>
               <li>
-                <Link href="/produkte" className="text-gray-400 hover:text-[#2aaa8a]">
+                <Link
+                  href="https://www.zinzino.com/shop/2020232820/CH/de-DE/products/shop/gut-health-supplements/301390/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-[#2aaa8a]"
+                >
                   ZinoBiotic+
                 </Link>
               </li>
               <li>
-                <Link href="/produkte" className="text-gray-400 hover:text-[#2aaa8a]">
+                <Link
+                  href="https://www.zinzino.com/shop/2020232820/CH/de-DE/products/shop/skin-nutrition/302800/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-[#2aaa8a]"
+                >
                   Collagen Boozt
                 </Link>
               </li>
               <li>
-                <Link href="/produkte" className="text-gray-400 hover:text-[#2aaa8a]">
+                <Link
+                  href="https://www.zinzino.com/shop/2020232820/CH/de-DE/products/shop/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-[#2aaa8a]"
+                >
                   Alle Produkte
                 </Link>
               </li>

@@ -36,6 +36,10 @@ export default function ProduktePage() {
           </div>
         </section>
 
+        <Link href="https://www.zinzino.com/2020232820" target="_blank" rel="noopener noreferrer">
+          <Button className="cta-button">Alle Produkte ansehen</Button>
+        </Link>
+
         <Products layout="vertical" />
 
         <section className="mt-16">
@@ -48,7 +52,7 @@ export default function ProduktePage() {
           <div className="text-center mt-8">
             <Button asChild className="cta-button">
               <Link
-                href="https://www.zinzino.com/shop/site/CH/de-DE/products/shop/home-health-tests/309000/"
+                href="https://www.zinzino.com/shop/2020232820/CH/de-DE/products/shop/home-health-tests/309000/"
                 target="_blank"
                 rel="noopener noreferrer"
               >

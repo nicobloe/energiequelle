@@ -12,7 +12,7 @@ const products = [
     description:
       "Omega-3 Nahrungsergänzungsmittel für ein ausgewogenes Verhältnis von Omega-6 und Omega-3. Unterstützt die normale Herzfunktion.",
     image: "/images/balanceoil-plus.png",
-    link: "https://www.zinzino.com/shop/site/CH/de-DE/products/shop/302800",
+    link: "https://www.zinzino.com/shop/2020232820/CH/de-DE/products/shop/omega-supplements/300000/",
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const products = [
     description:
       "Heimtest zur Analyse deines Omega-6:3-Verhältnisses. Erhalte personalisierte Ergebnisse und Empfehlungen für deine optimale Gesundheit.",
     image: "/images/viva-plus.png",
-    link: "https://www.zinzino.com/shop/site/CH/de-DE/products/shop/home-health-tests/309000/",
+    link: "https://www.zinzino.com/shop/2020232820/CH/de-DE/products/shop/home-health-tests/309000/",
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ const products = [
     description:
       "Ballaststoffmischung zur Unterstützung einer gesunden Darmfunktion und des Mikrobioms. Enthält fünf natürliche Ballaststoffquellen.",
     image: "/images/zinobiotic-plus.png",
-    link: "https://www.zinzino.com/shop/site/CH/de-DE/products/shop/gut-health-supplements/301390/",
+    link: "https://www.zinzino.com/shop/2020232820/CH/de-DE/products/shop/gut-health-supplements/301390/",
   },
   {
     id: 4,
@@ -36,7 +36,7 @@ const products = [
     description:
       "Schöne Haut von innen. Flüssige Formulierung mit Kirschgeschmack, Meereskollagen und Hyaluronsäure zur Verbesserung der Hautstruktur.",
     image: "/images/collagen-boozt-new.png",
-    link: "https://www.zinzino.com/shop/site/CH/de-DE/products/shop/skin-care/700100/",
+    link: "https://www.zinzino.com/shop/2020232820/CH/de-DE/products/shop/skin-nutrition/302800/",
   },
 ]
 
@@ -102,12 +102,7 @@ export default function Products({ layout = "grid" }: ProductsProps) {
                 <p className="text-gray-600 mb-5 flex-grow text-left hyphens-auto leading-relaxed" lang="de">
                   {product.description}
                 </p>
-                <Link
-                  href="https://www.zinzino.com/shop/2020232820/CH/de-DE/products/shop/skin-nutrition/302800/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full"
-                >
+                <Link href={product.link} target="_blank" rel="noopener noreferrer" className="w-full">
                   <Button className="cta-button w-full mt-auto">Mehr erfahren</Button>
                 </Link>
               </div>
@@ -116,7 +111,11 @@ export default function Products({ layout = "grid" }: ProductsProps) {
         </div>
 
         <div className="text-center mt-16 flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="https://www.zinzino.com/shop/site/CH/de-DE/products" target="_blank" rel="noopener noreferrer">
+          <Link
+            href="https://www.zinzino.com/shop/2020232820/CH/de-DE/products/shop/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button className="cta-button">Alle Produkte ansehen</Button>
           </Link>
           {/* Überprüfe den Link zur Produkte-Seite */}
