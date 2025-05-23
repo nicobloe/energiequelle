@@ -281,8 +281,13 @@ export default function Navbar() {
 
         <Sheet>
           <SheetTrigger asChild className="md:hidden">
-            <Button variant="outline" size="icon" onClick={handleMobileNavOpen}>
-              <Menu className="h-6 w-6" />
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={handleMobileNavOpen}
+              className="relative h-10 w-10 rounded-lg border border-gray-200 bg-white hover:bg-[#0C8F7C] hover:border-[#0C8F7C] transition-all duration-200 group shadow-sm"
+            >
+              <Menu className="h-5 w-5 text-black group-hover:text-white transition-colors duration-200" />
               <span className="sr-only">Menü öffnen</span>
             </Button>
           </SheetTrigger>
