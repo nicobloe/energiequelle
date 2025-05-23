@@ -190,7 +190,7 @@ export default function Navbar() {
         <Link href="/" onClick={handleLogoClick} className="flex items-center">
           <div className="h-14 flex items-center">
             <Image
-              src="/images/energiequelle-logo-new.svg"
+              src="/images/group-14.svg"
               alt="energiequelle Logo"
               width={140}
               height={56}
@@ -209,7 +209,7 @@ export default function Navbar() {
                   onClick={() => toggleDropdown(item.name)}
                   className={cn(
                     "dropdown-trigger flex items-center text-lg font-medium transition-colors focus:outline-none",
-                    openDropdown === item.name ? "text-[#38C0B2]" : "hover:text-[#38C0B2]",
+                    openDropdown === item.name ? "text-[#0C8F7C]" : "hover:text-[#0C8F7C]",
                   )}
                   aria-expanded={openDropdown === item.name}
                   aria-haspopup="true"
@@ -237,7 +237,7 @@ export default function Navbar() {
                           }}
                           className="block px-4 py-3 hover:bg-gray-50 transition-colors group"
                         >
-                          <div className="font-medium text-gray-900 group-hover:text-[#38C0B2] transition-colors">
+                          <div className="font-medium text-gray-900 group-hover:text-[#0C8F7C] transition-colors">
                             {subItem.name}
                           </div>
                           {subItem.description && (
@@ -257,20 +257,20 @@ export default function Navbar() {
                 className={cn(
                   "text-lg font-medium transition-colors relative",
                   (isHomePage && activeSection === item.sectionHref) || pathname === item.href
-                    ? "text-[#38C0B2] font-semibold"
-                    : "hover:text-[#38C0B2]",
+                    ? "text-[#0C8F7C] font-semibold"
+                    : "hover:text-[#0C8F7C]",
                 )}
               >
                 {item.name}
                 {((isHomePage && activeSection === item.sectionHref) || pathname === item.href) && (
-                  <span className="absolute -bottom-1.5 left-0 w-full h-0.5 bg-[#38C0B2] rounded-full" />
+                  <span className="absolute -bottom-1.5 left-0 w-full h-0.5 bg-[#0C8F7C] rounded-full" />
                 )}
               </Link>
             ),
           )}
           <Button
             asChild
-            className="bg-[#38C0B2] hover:bg-[#3CD8C8] text-white font-bold py-2 px-4 rounded transition-all duration-200 hover:shadow-md flex items-center gap-1.5"
+            className="bg-[#0C8F7C] hover:bg-[#0A7A6A] text-white font-bold py-2 px-4 rounded transition-all duration-200 hover:shadow-md flex items-center gap-1.5"
           >
             <Link href="https://www.zinzino.com/shop/site/CH/de-DE/products" target="_blank" rel="noopener noreferrer">
               Shop besuchen

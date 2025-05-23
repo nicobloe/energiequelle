@@ -21,7 +21,7 @@ export default function Hero() {
                   Produkte entdecken
                 </Link>
               </Button>
-              <Button asChild variant="outline" className="border-[#2aaa8a] text-[#2aaa8a]">
+              <Button asChild variant="outline" className="border-[#0C8F7C] text-[#0C8F7C]">
                 <Link
                   href="https://www.zinzino.com/2020232820/ch/de-de/explore/balance-concept/"
                   target="_blank"

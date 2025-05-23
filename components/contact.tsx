@@ -109,21 +109,21 @@ export default function Contact() {
             <h3 className="text-2xl font-bold mb-6">Kontaktinformationen</h3>
             <div className="space-y-6">
               <div className="flex items-start">
-                <Mail className="h-6 w-6 text-[#2aaa8a] mr-4" />
+                <Mail className="h-6 w-6 text-[#0C8F7C] mr-4" />
                 <div>
                   <h4 className="font-medium">E-Mail</h4>
                   <p className="text-gray-600">info@energiequelle.ch</p>
                 </div>
               </div>
               <div className="flex items-start">
-                <Phone className="h-6 w-6 text-[#2aaa8a] mr-4" />
+                <Phone className="h-6 w-6 text-[#0C8F7C] mr-4" />
                 <div>
                   <h4 className="font-medium">Telefon</h4>
                   <p className="text-gray-600">+41 (0)79 690 84 34</p>
                 </div>
               </div>
               <div className="flex items-start">
-                <MapPin className="h-6 w-6 text-[#2aaa8a] mr-4" />
+                <MapPin className="h-6 w-6 text-[#0C8F7C] mr-4" />
                 <div>
                   <h4 className="font-medium">Adresse</h4>
                   <p className="text-gray-600">Mühlebachstrasse 5</p>
@@ -136,7 +136,7 @@ export default function Contact() {
             <div className="mt-8">
               <h4 className="font-medium mb-2">Folge uns</h4>
               <div className="flex space-x-4">
-                <a href="#" className="text-gray-600 hover:text-[#2aaa8a]">
+                <a href="#" className="text-gray-600 hover:text-[#0C8F7C]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -152,7 +152,7 @@ export default function Contact() {
                     <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                   </svg>
                 </a>
-                <a href="#" className="text-gray-600 hover:text-[#2aaa8a]">
+                <a href="#" className="text-gray-600 hover:text-[#0C8F7C]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -170,7 +170,7 @@ export default function Contact() {
                     <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
                   </svg>
                 </a>
-                <a href="#" className="text-gray-600 hover:text-[#2aaa8a]">
+                <a href="#" className="text-gray-600 hover:text-[#0C8F7C]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"

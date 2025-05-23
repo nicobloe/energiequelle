@@ -24,7 +24,7 @@ export default function Footer() {
                   href="https://www.zinzino.com/shop/2020232820/CH/de-DE/products/shop/omega-supplements/300000/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-[#2aaa8a]"
+                  className="text-gray-400 hover:text-[#0C8F7C]"
                 >
                   BalanceOil+
                 </Link>
@@ -34,7 +34,7 @@ export default function Footer() {
                   href="https://www.zinzino.com/shop/2020232820/CH/de-DE/products/shop/immune-system-supplements/301000/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-[#2aaa8a]"
+                  className="text-gray-400 hover:text-[#0C8F7C]"
                 >
                   Viva+
                 </Link>
@@ -44,7 +44,7 @@ export default function Footer() {
                   href="https://www.zinzino.com/shop/2020232820/CH/de-DE/products/shop/gut-health-supplements/301390/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-[#2aaa8a]"
+                  className="text-gray-400 hover:text-[#0C8F7C]"
                 >
                   ZinoBiotic+
                 </Link>
@@ -54,7 +54,7 @@ export default function Footer() {
                   href="https://www.zinzino.com/shop/2020232820/CH/de-DE/products/shop/skin-nutrition/302800/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-[#2aaa8a]"
+                  className="text-gray-400 hover:text-[#0C8F7C]"
                 >
                   Collagen Boozt
                 </Link>
@@ -64,7 +64,7 @@ export default function Footer() {
                   href="https://www.zinzino.com/shop/2020232820/CH/de-DE/products/shop/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-[#2aaa8a]"
+                  className="text-gray-400 hover:text-[#0C8F7C]"
                 >
                   Alle Produkte
                 </Link>
@@ -76,7 +76,7 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-4">Über uns</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/ueber-uns" className="text-gray-400 hover:text-[#2aaa8a]">
+                <Link href="/ueber-uns" className="text-gray-400 hover:text-[#0C8F7C]">
                   Unsere Geschichte
                 </Link>
               </li>
@@ -85,18 +85,18 @@ export default function Footer() {
                   href="https://www.zinzino.com/site/CH/de-DE/join-zinzino"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-[#2aaa8a]"
+                  className="text-gray-400 hover:text-[#0C8F7C]"
                 >
                   Zinzino Partner werden
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-gray-400 hover:text-[#2aaa8a]">
+                <Link href="/blog" className="text-gray-400 hover:text-[#0C8F7C]">
                   Wissenschaft & Forschung
                 </Link>
               </li>
               <li>
-                <Link href="/ueber-uns" className="text-gray-400 hover:text-[#2aaa8a]">
+                <Link href="/ueber-uns" className="text-gray-400 hover:text-[#0C8F7C]">
                   Nachhaltigkeit
                 </Link>
               </li>
@@ -107,17 +107,17 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-4">Rechtliches</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/impressum" className="text-gray-400 hover:text-[#2aaa8a]">
+                <Link href="/impressum" className="text-gray-400 hover:text-[#0C8F7C]">
                   Impressum
                 </Link>
               </li>
               <li>
-                <Link href="/datenschutz" className="text-gray-400 hover:text-[#2aaa8a]">
+                <Link href="/datenschutz" className="text-gray-400 hover:text-[#0C8F7C]">
                   Datenschutz
                 </Link>
               </li>
               <li>
-                <Link href="/agb" className="text-gray-400 hover:text-[#2aaa8a]">
+                <Link href="/agb" className="text-gray-400 hover:text-[#0C8F7C]">
                   AGB
                 </Link>
               </li>
@@ -128,22 +128,22 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-4">Gesundheitsthemen</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/blog/gut-health" className="text-gray-400 hover:text-[#2aaa8a]">
+                <Link href="/blog/gut-health" className="text-gray-400 hover:text-[#0C8F7C]">
                   Darmgesundheit
                 </Link>
               </li>
               <li>
-                <Link href="/blog/omega3-aging" className="text-gray-400 hover:text-[#2aaa8a]">
+                <Link href="/blog/omega3-aging" className="text-gray-400 hover:text-[#0C8F7C]">
                   Omega-3 & Alterung
                 </Link>
               </li>
               <li>
-                <Link href="/stoffwechselkur" className="text-gray-400 hover:text-[#2aaa8a]">
+                <Link href="/stoffwechselkur" className="text-gray-400 hover:text-[#0C8F7C]">
                   Stoffwechselkur
                 </Link>
               </li>
               <li>
-                <Link href="/erfahrungsberichte" className="text-gray-400 hover:text-[#2aaa8a]">
+                <Link href="/erfahrungsberichte" className="text-gray-400 hover:text-[#0C8F7C]">
                   Erfahrungsberichte
                 </Link>
               </li>
