@@ -241,7 +241,9 @@ export default function Omega3SuperBlogPost() {
               <p className="text-base mb-4">
                 Ich helfe dir gerne dabei, den ersten Schritt zu machen und deine optimale Omega-Balance zu finden!
               </p>
-              <Button className="cta-button">Jetzt starten</Button>
+              <Button asChild className="cta-button">
+                <Link href="/contact">Kontaktiere mich</Link>
+              </Button>
             </div>
           </div>
 
