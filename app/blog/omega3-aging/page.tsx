@@ -29,7 +29,7 @@ export default function Omega3AgingBlogPost() {
               <span className="mx-2">•</span>
               <span>Omega-Balance</span>
               <button
-                className="ml-auto flex items-center text-[#2aaa8a] hover:text-[#3CD8C8] transition-colors"
+                className="ml-auto flex items-center text-[#9BCCED] hover:text-[#7FB3E3] transition-colors"
                 onClick={() => {
                   if (navigator.share) {
                     navigator

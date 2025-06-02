@@ -14,7 +14,7 @@ export default function GutHealthBlogPost() {
         <Breadcrumb />
         <article className="max-w-4xl mx-auto px-4 py-12">
           <div className="mb-8">
-            <Link href="/#blog" className="flex items-center text-[#2aaa8a] mb-4 hover:underline">
+            <Link href="/#blog" className="flex items-center text-[#9BCCED] mb-4 hover:underline">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Zurück zur Übersicht
             </Link>

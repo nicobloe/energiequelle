@@ -46,21 +46,21 @@ export default function UeberUnsPage() {
           <h2 className="text-3xl font-bold mb-6">Meine Werte</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white p-4 rounded-lg shadow-md">
-              <h3 className="text-xl font-bold mb-3 text-[#2aaa8a]">Qualität</h3>
+              <h3 className="text-xl font-bold mb-3 text-[#9BCCED]">Qualität</h3>
               <p>
                 Ich setze auf höchste Qualitätsstandards bei allen Produkten und Dienstleistungen, die ich anbiete. Nur
                 das Beste ist gut genug für meine Kunden.
               </p>
             </div>
             <div className="bg-white p-4 rounded-lg shadow-md">
-              <h3 className="text-xl font-bold mb-3 text-[#2aaa8a]">Wissenschaftliche Fundierung</h3>
+              <h3 className="text-xl font-bold mb-3 text-[#9BCCED]">Wissenschaftliche Fundierung</h3>
               <p>
                 Alle meine Empfehlungen und Produkte basieren auf wissenschaftlichen Erkenntnissen und werden
                 kontinuierlich durch neue Forschungsergebnisse verbessert.
               </p>
             </div>
             <div className="bg-white p-4 rounded-lg shadow-md">
-              <h3 className="text-xl font-bold mb-3 text-[#2aaa8a]">Persönliche Betreuung</h3>
+              <h3 className="text-xl font-bold mb-3 text-[#9BCCED]">Persönliche Betreuung</h3>
               <p>
                 Ich glaube an individuelle Lösungen und biete jedem Kunden eine persönliche Betreuung, die auf seine
                 spezifischen Bedürfnisse zugeschnitten ist.

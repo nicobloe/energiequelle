@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import TrustSignals from "./trust-signals"
 
 export default function Hero() {
   return (
@@ -31,6 +32,7 @@ export default function Hero() {
                 </Link>
               </Button>
             </div>
+            <TrustSignals />
           </div>
           <div className="relative">
             <Image

@@ -192,10 +192,10 @@ export default function Navbar() {
             <Image
               src="/images/Logo_svg.svg"
               alt="energiequelle Logo"
-              width={160}
-              height={64}
+              width={200}
+              height={80}
               priority
-              className="h-12 w-auto object-contain"
+              className="h-16 w-auto object-contain"
               quality={100}
               unoptimized
             />
