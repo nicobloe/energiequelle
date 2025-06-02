@@ -88,7 +88,7 @@ export default function GutHealthBlogPost() {
             </p>
 
             <div className="bg-[#2aaa8a] bg-opacity-10 p-4 rounded-xl my-6">
-              <h3 className="text-xl font-bold mb-2 text-[#2aaa8a]">Wenn dein Mikrobiom im Gleichgewicht ist, dann:</h3>
+              <h3 className="text-xl font-bold mb-2 text-[#9BCCED]">Wenn dein Mikrobiom im Gleichgewicht ist, dann:</h3>
               <ul className="list-disc pl-6 space-y-1">
                 <li>unterstützt es die Verdauung und Nährstoffaufnahme</li>
                 <li>stärkt es das Immunsystem</li>
@@ -184,7 +184,7 @@ export default function GutHealthBlogPost() {
               <div className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 transition-transform hover:shadow-lg hover:-translate-y-1">
                 <div className="bg-[#2aaa8a] h-2"></div>
                 <div className="p-6">
-                  <div className="bg-[#2aaa8a] rounded-full w-12 h-12 flex items-center justify-center text-white font-bold mb-4">
+                  <div className="bg-[#9BCCED] rounded-full w-12 h-12 flex items-center justify-center text-white font-bold mb-4">
                     1
                   </div>
                   <h3 className="text-xl font-bold mb-3">Erhöhe die Ballaststoffzufuhr</h3>
@@ -197,7 +197,7 @@ export default function GutHealthBlogPost() {
               <div className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 transition-transform hover:shadow-lg hover:-translate-y-1">
                 <div className="bg-[#2aaa8a] h-2"></div>
                 <div className="p-6">
-                  <div className="bg-[#2aaa8a] rounded-full w-12 h-12 flex items-center justify-center text-white font-bold mb-4">
+                  <div className="bg-[#9BCCED] rounded-full w-12 h-12 flex items-center justify-center text-white font-bold mb-4">
                     2
                   </div>
                   <h3 className="text-xl font-bold mb-3">Unterstütze die Darmbakterien</h3>
@@ -210,7 +210,7 @@ export default function GutHealthBlogPost() {
               <div className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 transition-transform hover:shadow-lg hover:-translate-y-1">
                 <div className="bg-[#2aaa8a] h-2"></div>
                 <div className="p-6">
-                  <div className="bg-[#2aaa8a] rounded-full w-12 h-12 flex items-center justify-center text-white font-bold mb-4">
+                  <div className="bg-[#9BCCED] rounded-full w-12 h-12 flex items-center justify-center text-white font-bold mb-4">
                     3
                   </div>
                   <h3 className="text-xl font-bold mb-3">Sorge für ein ausgewogenes Verhältnis</h3>
@@ -301,7 +301,7 @@ export default function GutHealthBlogPost() {
                     verlangsamen. Die tägliche Einnahme von einem Gramm Omega-3 verlangsamt die biologische Alterung in
                     drei Jahren um bis zu vier Monate.
                   </p>
-                  <Link href="/blog/omega3-aging" className="text-[#2aaa8a] text-sm hover:underline">
+                  <Link href="/blog/omega3-aging" className="text-[#9BCCED] text-sm hover:underline">
                     Weiterlesen
                   </Link>
                 </div>

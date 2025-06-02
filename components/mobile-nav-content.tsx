@@ -67,8 +67,8 @@ export default function MobileNavContent({ navItems, isHomePage, activeSection }
                   className={cn(
                     "block transition-colors",
                     (isHomePage && activeSection === subItem.sectionHref) || location.pathname === subItem.href
-                      ? "text-[#38C0B2] font-semibold"
-                      : "hover:text-[#38C0B2]",
+                      ? "text-[#9BCCED] font-semibold"
+                      : "hover:text-[#9BCCED]",
                   )}
                 >
                   <div>{subItem.name}</div>
@@ -84,8 +84,8 @@ export default function MobileNavContent({ navItems, isHomePage, activeSection }
             className={cn(
               "text-lg font-medium transition-colors",
               (isHomePage && activeSection === item.sectionHref) || location.pathname === item.href
-                ? "text-[#38C0B2] font-semibold"
-                : "hover:text-[#38C0B2]",
+                ? "text-[#9BCCED] font-semibold"
+                : "hover:text-[#9BCCED]",
             )}
           >
             {item.name}
@@ -94,7 +94,7 @@ export default function MobileNavContent({ navItems, isHomePage, activeSection }
       )}
       <Button
         asChild
-        className="bg-[#38C0B2] hover:bg-[#3CD8C8] text-white font-bold py-2 px-4 rounded w-full mt-4 flex items-center justify-center gap-1.5"
+        className="bg-[#9BCCED] hover:bg-[#7FB3E3] text-white font-bold py-2 px-4 rounded w-full mt-4 flex items-center justify-center gap-1.5"
       >
         <Link href="https://www.zinzino.com/shop/site/CH/de-DE/products" target="_blank" rel="noopener noreferrer">
           Shop besuchen

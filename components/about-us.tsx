@@ -46,7 +46,7 @@ export default function AboutUs() {
               <Button className="cta-button" onClick={scrollToContact}>
                 Kontaktiere mich
               </Button>
-              <Button asChild variant="outline" className="border-[#0C8F7C] text-[#0C8F7C]">
+              <Button asChild variant="outline" className="border-[#9BCCED] text-[#9BCCED]">
                 <Link href="/ueber-uns">Mehr über mich erfahren</Link>
               </Button>
             </div>
@@ -64,21 +64,21 @@ export default function AboutUs() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
           <div className="bg-white p-4 rounded-lg shadow-md">
-            <h3 className="text-xl font-bold mb-3 text-[#0C8F7C]">Meine Mission</h3>
+            <h3 className="text-xl font-bold mb-3 text-[#9BCCED]">Meine Mission</h3>
             <p className="px-2">
               Ich möchte Menschen dabei unterstützen, durch optimale Ernährung und Nahrungsergänzung ein gesünderes,
               aktiveres und erfüllteres Leben zu führen.
             </p>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-md">
-            <h3 className="text-xl font-bold mb-3 text-[#0C8F7C]">Meine Werte</h3>
+            <h3 className="text-xl font-bold mb-3 text-[#9BCCED]">Meine Werte</h3>
             <p className="px-2">
               Qualität, Transparenz und wissenschaftliche Fundierung stehen im Mittelpunkt meiner Arbeit. Ich glaube an
               nachhaltige Gesundheitslösungen und persönliche Betreuung.
             </p>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-md">
-            <h3 className="text-xl font-bold mb-3 text-[#0C8F7C]">Mein Versprechen</h3>
+            <h3 className="text-xl font-bold mb-3 text-[#9BCCED]">Mein Versprechen</h3>
             <p className="px-2">
               Ich verspreche dir nur Produkte anzubieten, von denen ich selbst überzeugt bin und die ich auch selbst
               verwende. Deine Zufriedenheit steht für mich an erster Stelle.

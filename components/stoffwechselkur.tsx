@@ -33,7 +33,7 @@ export default function Stoffwechselkur() {
                 "Darm-Regulierung",
               ].map((item, index) => (
                 <div key={index} className="flex items-start">
-                  <div className="bg-[#0C8F7C] p-1.5 rounded-full mr-3 mt-0.5 flex-shrink-0">
+                  <div className="bg-[#9BCCED] p-1.5 rounded-full mr-3 mt-0.5 flex-shrink-0">
                     <Check className="h-4 w-4 text-white" />
                   </div>
                   <p>{item}</p>
@@ -67,7 +67,7 @@ export default function Stoffwechselkur() {
               priority
             />
             <div className="absolute -bottom-4 -right-4 bg-white p-3 rounded-lg shadow-md hidden md:block">
-              <div className="text-[#2aaa8a] font-bold">Mehr Vitalität & Wohlbefinden</div>
+              <div className="text-[#9BCCED] font-bold">Mehr Vitalität & Wohlbefinden</div>
               <div className="text-gray-600 text-sm">Spüre den Unterschied</div>
             </div>
           </div>

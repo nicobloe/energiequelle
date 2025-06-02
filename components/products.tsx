@@ -120,7 +120,7 @@ export default function Products({ layout = "grid" }: ProductsProps) {
           </Link>
           {/* Überprüfe den Link zur Produkte-Seite */}
           <Link href="/produkte">
-            <Button variant="outline" className="border-[#2aaa8a] text-[#2aaa8a]">
+            <Button variant="outline" className="border-[#9BCCED] text-[#9BCCED]">
               Detaillierte Produktinfos
             </Button>
           </Link>

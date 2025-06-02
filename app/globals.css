@@ -6,7 +6,7 @@
 :root {
   --background: 0 0% 100%;
   --foreground: 222.2 84% 4.9%;
-  --primary: 162 60% 42%;
+  --primary: 200 65% 75%; /* #9BCCED */
   --primary-foreground: 210 40% 98%;
 }
 
@@ -27,7 +27,7 @@ body {
 }
 
 .cta-button {
-  background-color: #0c8f7c;
+  background-color: #9bcced;
   color: white;
   font-weight: bold;
   padding: 0.75rem 1.5rem;
@@ -36,7 +36,8 @@ body {
 }
 
 .cta-button:hover {
-  background-color: #0a7a6a;
+  background-color: #7fb3e3;
+  color: white;
   transform: translateY(-1px);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }

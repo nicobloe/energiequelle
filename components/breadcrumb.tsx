@@ -33,7 +33,7 @@ export default function Breadcrumb() {
     <nav aria-label="Breadcrumb" className="bg-white py-2 px-4 md:px-8">
       <ol className="flex items-center flex-wrap text-sm">
         <li className="flex items-center">
-          <Link href="/" className="text-gray-500 hover:text-[#2aaa8a] flex items-center">
+          <Link href="/" className="text-gray-500 hover:text-[#9BCCED] flex items-center">
             <Home className="h-4 w-4" />
             <span className="sr-only">Startseite</span>
           </Link>
@@ -49,12 +49,12 @@ export default function Breadcrumb() {
           return (
             <li key={path} className="flex items-center">
               {isLast ? (
-                <span className="font-medium text-[#2aaa8a]" aria-current="page">
+                <span className="font-medium text-[#9BCCED]" aria-current="page">
                   {pathMap[segment] || segment}
                 </span>
               ) : (
                 <>
-                  <Link href={path} className="text-gray-500 hover:text-[#2aaa8a]">
+                  <Link href={path} className="text-gray-500 hover:text-[#9BCCED]">
                     {pathMap[segment] || segment}
                   </Link>
                   <ChevronRight className="h-4 w-4 mx-2 text-gray-400" aria-hidden="true" />

@@ -20,13 +20,19 @@ const config = {
     },
     extend: {
       colors: {
+        // Neue energiequelle Markenfarben
+        brand: {
+          blue: "#9BCCED",
+          gray: "#968C83",
+          white: "#FFFFFF",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
+          DEFAULT: "#9BCCED",
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {

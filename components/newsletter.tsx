@@ -59,8 +59,8 @@ export default function Newsletter() {
 
       <section className="section bg-[#f8f9fa] pt-8 md:pt-12">
         <div className="max-w-3xl mx-auto text-center">
-          <div className="inline-block p-3 bg-[#0C8F7C] bg-opacity-10 rounded-full mb-4">
-            <Mail className="h-6 w-6 text-[#0C8F7C]" />
+          <div className="inline-block p-3 bg-[#9BCCED] bg-opacity-10 rounded-full mb-4">
+            <Mail className="h-6 w-6 text-[#9BCCED]" />
           </div>
           <h2 className="section-title">Newsletter abonnieren</h2>
           <p className="section-subtitle">
@@ -150,7 +150,7 @@ export default function Newsletter() {
                   />
                   <label htmlFor="privacy" className="ml-2 text-sm text-gray-600 text-left">
                     Ich akzeptiere die{" "}
-                    <a href="/datenschutz" className="text-[#0C8F7C] hover:underline">
+                    <a href="/datenschutz" className="text-[#9BCCED] hover:underline">
                       Datenschutzbestimmungen
                     </a>{" "}
                     und bin damit einverstanden, dass meine Daten zur Bearbeitung meiner Anfrage elektronisch erhoben
@@ -165,7 +165,7 @@ export default function Newsletter() {
                     {status === "loading" ? "Wird angemeldet..." : "Jetzt anmelden"}
                   </Button>
                   {/* Überprüfe den Link zur Newsletter-Seite */}
-                  <Button asChild variant="outline" className="border-[#0C8F7C] text-[#0C8F7C]">
+                  <Button asChild variant="outline" className="border-[#9BCCED] text-[#9BCCED]">
                     <Link href="/newsletter">Mehr Informationen</Link>
                   </Button>
                 </div>

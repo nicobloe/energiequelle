@@ -60,7 +60,7 @@ export default function BlogPage() {
                   <p className="text-gray-600 mb-4">{post.excerpt}</p>
                   <Link
                     href={post.url || "#"}
-                    className="text-[#2aaa8a] font-medium hover:underline"
+                    className="text-[#9BCCED] font-medium hover:underline"
                     target={post.url && post.url.startsWith("http") ? "_blank" : "_self"}
                   >
                     Weiterlesen

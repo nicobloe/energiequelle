@@ -139,7 +139,7 @@ export default function Omega3AgingBlogPost() {
             </p>
 
             <div className="bg-[#2aaa8a] bg-opacity-10 p-4 rounded-xl my-6">
-              <h3 className="text-xl font-bold mb-2 text-[#2aaa8a]">Warum ist das biologische Alter wichtig?</h3>
+              <h3 className="text-xl font-bold mb-2 text-[#9BCCED]">Warum ist das biologische Alter wichtig?</h3>
               <p className="text-base mb-3">
                 Das biologische Alter gibt Aufschluss darüber, wie schnell unser Körper altert, unabhängig von unserem
                 chronologischen Alter. Es ist ein besserer Indikator für unsere Gesundheit und Lebenserwartung als das
@@ -212,7 +212,7 @@ export default function Omega3AgingBlogPost() {
                 </div>
                 <div className="p-4">
                   <h4 className="font-bold mb-2">Mehr als nur ein Gefühl - Dein Bauchgefühl gibt den Ton an</h4>
-                  <Link href="/blog/gut-health" className="text-[#2aaa8a] text-sm hover:underline">
+                  <Link href="/blog/gut-health" className="text-[#9BCCED] text-sm hover:underline">
                     Weiterlesen
                   </Link>
                 </div>

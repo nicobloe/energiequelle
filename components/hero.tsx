@@ -21,7 +21,7 @@ export default function Hero() {
                   Produkte entdecken
                 </Link>
               </Button>
-              <Button asChild variant="outline" className="border-[#0C8F7C] text-[#0C8F7C]">
+              <Button asChild variant="outline" className="border-[#9BCCED] text-[#9BCCED]">
                 <Link
                   href="https://www.zinzino.com/2020232820/ch/de-de/explore/balance-concept/"
                   target="_blank"
@@ -43,7 +43,7 @@ export default function Hero() {
               sizes="(max-width: 768px) 100vw, 50vw"
             />
             <div className="absolute -bottom-4 -right-4 bg-white p-3 rounded-lg shadow-md hidden md:block">
-              <div className="text-[#2aaa8a] font-bold text-lg">Natürlich. Wissenschaftlich. Effektiv.</div>
+              <div className="text-[#9BCCED] font-bold text-lg">Natürlich. Wissenschaftlich. Effektiv.</div>
               <div className="text-gray-600 text-sm">Premium-Nahrungsergänzung aus Norwegen</div>
             </div>
           </div>

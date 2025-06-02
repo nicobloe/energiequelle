@@ -185,18 +185,19 @@ export default function Navbar() {
   const isHomePage = pathname === "/" || pathname === ""
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white">
+    <header className="sticky top-0 z-50 w-full border-b bg-[#968C83]">
       <div className="container flex h-20 items-center justify-between">
         <Link href="/" onClick={handleLogoClick} className="flex items-center">
           <div className="h-14 flex items-center">
             <Image
-              src="/images/group-14.svg"
+              src="/images/Logo_svg.svg"
               alt="energiequelle Logo"
-              width={140}
-              height={56}
+              width={160}
+              height={64}
               priority
-              className="h-auto max-h-10 w-auto object-contain"
+              className="h-12 w-auto object-contain"
               quality={100}
+              unoptimized
             />
           </div>
         </Link>
@@ -208,8 +209,8 @@ export default function Navbar() {
                 <button
                   onClick={() => toggleDropdown(item.name)}
                   className={cn(
-                    "dropdown-trigger flex items-center text-lg font-medium transition-colors focus:outline-none",
-                    openDropdown === item.name ? "text-[#0C8F7C]" : "hover:text-[#0C8F7C]",
+                    "dropdown-trigger flex items-center text-lg font-medium transition-colors focus:outline-none text-white",
+                    openDropdown === item.name ? "text-[#9BCCED]" : "hover:text-[#9BCCED]",
                   )}
                   aria-expanded={openDropdown === item.name}
                   aria-haspopup="true"
@@ -237,7 +238,7 @@ export default function Navbar() {
                           }}
                           className="block px-4 py-3 hover:bg-gray-50 transition-colors group"
                         >
-                          <div className="font-medium text-gray-900 group-hover:text-[#0C8F7C] transition-colors">
+                          <div className="font-medium text-gray-900 group-hover:text-[#9BCCED] transition-colors">
                             {subItem.name}
                           </div>
                           {subItem.description && (
@@ -255,22 +256,22 @@ export default function Navbar() {
                 href={item.href}
                 onClick={() => {}}
                 className={cn(
-                  "text-lg font-medium transition-colors relative",
+                  "text-lg font-medium transition-colors relative text-white",
                   (isHomePage && activeSection === item.sectionHref) || pathname === item.href
-                    ? "text-[#0C8F7C] font-semibold"
-                    : "hover:text-[#0C8F7C]",
+                    ? "text-[#9BCCED] font-semibold"
+                    : "hover:text-[#9BCCED]",
                 )}
               >
                 {item.name}
                 {((isHomePage && activeSection === item.sectionHref) || pathname === item.href) && (
-                  <span className="absolute -bottom-1.5 left-0 w-full h-0.5 bg-[#0C8F7C] rounded-full" />
+                  <span className="absolute -bottom-1.5 left-0 w-full h-0.5 bg-[#9BCCED] rounded-full" />
                 )}
               </Link>
             ),
           )}
           <Button
             asChild
-            className="bg-[#0C8F7C] hover:bg-[#0A7A6A] text-white font-bold py-2 px-4 rounded transition-all duration-200 hover:shadow-md flex items-center gap-1.5"
+            className="bg-[#9BCCED] hover:bg-[#7FB3E3] text-white font-bold py-2 px-4 rounded transition-all duration-200 hover:shadow-md flex items-center gap-1.5"
           >
             <Link href="https://www.zinzino.com/shop/site/CH/de-DE/products" target="_blank" rel="noopener noreferrer">
               Shop besuchen
@@ -285,7 +286,7 @@ export default function Navbar() {
               variant="ghost"
               size="icon"
               onClick={handleMobileNavOpen}
-              className="relative h-10 w-10 rounded-lg border border-gray-200 bg-white hover:bg-[#0C8F7C] hover:border-[#0C8F7C] transition-all duration-200 group shadow-sm"
+              className="relative h-10 w-10 rounded-lg border border-gray-200 bg-white hover:bg-[#9BCCED] hover:border-[#9BCCED] transition-all duration-200 group shadow-sm"
             >
               <Menu className="h-5 w-5 text-black group-hover:text-white transition-colors duration-200" />
               <span className="sr-only">Menü öffnen</span>

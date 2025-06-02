@@ -40,7 +40,7 @@ export default function StoffwechselkurPage() {
                   "Darm-Regulierung",
                 ].map((item, index) => (
                   <div key={index} className="flex items-start">
-                    <div className="bg-[#2aaa8a] p-1.5 rounded-full mr-3 mt-0.5 flex-shrink-0">
+                    <div className="bg-[#9BCCED] p-1.5 rounded-full mr-3 mt-0.5 flex-shrink-0">
                       <Check className="h-4 w-4 text-white" />
                     </div>
                     <p>{item}</p>
@@ -65,7 +65,7 @@ export default function StoffwechselkurPage() {
           <div className="bg-gray-50 p-5 rounded-lg">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="bg-white p-6 rounded-lg shadow-sm">
-                <div className="bg-[#2aaa8a] rounded-full w-12 h-12 flex items-center justify-center text-white font-bold mb-4">
+                <div className="bg-[#9BCCED] rounded-full w-12 h-12 flex items-center justify-center text-white font-bold mb-4">
                   1
                 </div>
                 <h3 className="text-xl font-bold mb-3">Vorbereitung</h3>
@@ -75,7 +75,7 @@ export default function StoffwechselkurPage() {
                 </p>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-sm">
-                <div className="bg-[#2aaa8a] rounded-full w-12 h-12 flex items-center justify-center text-white font-bold mb-4">
+                <div className="bg-[#9BCCED] rounded-full w-12 h-12 flex items-center justify-center text-white font-bold mb-4">
                   2
                 </div>
                 <h3 className="text-xl font-bold mb-3">Durchführung</h3>
@@ -85,7 +85,7 @@ export default function StoffwechselkurPage() {
                 </p>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-sm">
-                <div className="bg-[#2aaa8a] rounded-full w-12 h-12 flex items-center justify-center text-white font-bold mb-4">
+                <div className="bg-[#9BCCED] rounded-full w-12 h-12 flex items-center justify-center text-white font-bold mb-4">
                   3
                 </div>
                 <h3 className="text-xl font-bold mb-3">Nachbetreuung</h3>
