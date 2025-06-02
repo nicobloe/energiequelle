@@ -7,19 +7,19 @@ const testimonials = [
   {
     id: 1,
     name: "Sabine M.",
-    text: "Seit ich BalanceOil+ nehme, hat sich mein Energielevel deutlich verbessert. Ich fühle mich fitter und ausgeglichener im Alltag.",
+    text: "Hallo mir gefällt das Produkt",
     rating: 5,
   },
   {
     id: 2,
     name: "Thomas K.",
-    text: "Die Produkte von Zinzino haben meine Lebensqualität spürbar verbessert. Besonders das ZinoBiotic+ hat meiner Verdauung sehr geholfen.",
+    text: "Hallo mir gefällt das Produkt",
     rating: 5,
   },
   {
     id: 3,
     name: "Martina S.",
-    text: "Als Sportlerin ist eine optimale Ernährung für mich essentiell. Mit Zinzino habe ich die perfekte Ergänzung gefunden, um meine Leistung zu steigern.",
+    text: "Hallo mir gefällt das Produkt",
     rating: 4,
   },
 ]
