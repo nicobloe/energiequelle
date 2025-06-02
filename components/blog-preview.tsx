@@ -7,21 +7,21 @@ import Link from "next/link"
 const blogPosts = [
   {
     id: 1,
+    title: "Halleluja - Omega-3 ist super!",
+    excerpt:
+      "Entdecke die unglaublichen Vorteile von Omega-3-Fettsäuren für deine Gesundheit und erfahre, warum diese essentiellen Fettsäuren wahre Wundermittel sind.",
+    date: "15. Januar 2025",
+    image: "/images/omega3-benefits.png",
+    url: "/blog/omega3-super",
+  },
+  {
+    id: 2,
     title: "Mehr als nur ein Gefühl - Dein Bauchgefühl gibt den Ton an",
     excerpt:
       "Erfahre, wie du dein Mikrobiom auf natürliche Weise stärken kannst und warum eine gesunde Darmflora entscheidend für dein Wohlbefinden ist.",
     date: "9. April 2025",
     image: "/images/zinobiotic-smoothie.png",
     url: "/blog/gut-health",
-  },
-  {
-    id: 2,
-    title: "Omega-3 reduziert laut Schweizer Studie das biologische Alter",
-    excerpt:
-      "Omega-3-Fettsäuren können laut einer neuen Studie das Altern messbar verlangsamen. Die tägliche Einnahme von einem Gramm Omega-3 verlangsamt die biologische Alterung um bis zu vier Monate.",
-    date: "5. Februar 2025",
-    image: "/images/grandfather-with-baby.png",
-    url: "/blog/omega3-aging",
   },
 ]
 
