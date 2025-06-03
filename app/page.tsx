@@ -8,7 +8,6 @@ import Footer from "@/components/footer"
 import BlogPreview from "@/components/blog-preview"
 import Events from "@/components/events"
 import AboutUs from "@/components/about-us"
-import Newsletter from "@/components/newsletter"
 
 export default function Home() {
   return (
@@ -21,7 +20,6 @@ export default function Home() {
       <BlogPreview />
       <Testimonials />
       <Events />
-      <Newsletter />
       <Contact />
       <Footer />
     </main>

@@ -171,12 +171,6 @@ export default function Navbar() {
           sectionHref: "#events",
           description: "Informationen zu unseren Veranstaltungen",
         },
-        {
-          name: "Newsletter",
-          href: "/newsletter",
-          sectionHref: "#newsletter",
-          description: "Abonnieren Sie unseren Newsletter",
-        },
       ],
     },
   ]

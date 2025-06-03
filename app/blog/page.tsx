@@ -3,7 +3,6 @@ import { Card, CardContent } from "@/components/ui/card"
 import { CalendarIcon } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
 
 const blogPosts = [
   {
@@ -82,18 +81,6 @@ export default function BlogPage() {
                 <span className="font-medium">{category}</span>
               </div>
             ))}
-          </div>
-        </section>
-
-        <section className="bg-gray-50 p-5 rounded-lg">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold mb-4">Newsletter abonnieren</h2>
-            <p className="text-lg mb-6 max-w-2xl mx-auto">
-              Erhalte regelmässig neue Artikel, Gesundheitstipps und exklusive Angebote direkt in dein Postfach.
-            </p>
-            <Button asChild className="cta-button">
-              <Link href="/newsletter">Jetzt anmelden</Link>
-            </Button>
           </div>
         </section>
       </div>

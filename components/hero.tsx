@@ -4,7 +4,7 @@ import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ChevronDown, Play, CheckCircle } from "lucide-react"
+import { CheckCircle } from "lucide-react"
 import TrustSignals from "./trust-signals"
 
 export default function Hero() {
@@ -29,7 +29,7 @@ export default function Hero() {
           </div>
 
           {/* Hauptinhalt: Optionen und Bild auf gleicher Höhe */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start flex-1">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch flex-1">
             {/* Left side - Optionen */}
             <div className="lg:col-span-6 space-y-8">
               {/* Neuer Titel für Termin Buchen */}
@@ -158,21 +158,6 @@ export default function Hero() {
                   </div>
                 </div>
               </div>
-
-              {/* Mehr erfahren */}
-              <div className="pt-4">
-                <Button
-                  variant="ghost"
-                  onClick={() => setShowProtocol(!showProtocol)}
-                  className="text-gray-500 hover:text-[#9BCCED] text-sm flex items-center gap-2 p-0"
-                >
-                  <Play className="h-4 w-4" />
-                  <span>Wie funktioniert das Gesundheitsprotokoll?</span>
-                  <ChevronDown
-                    className={`h-4 w-4 transition-transform duration-300 ${showProtocol ? "rotate-180" : ""}`}
-                  />
-                </Button>
-              </div>
             </div>
 
             {/* Right side - Interactive Product Showcase */}
@@ -235,8 +220,6 @@ export default function Hero() {
           </div>
         </div>
       </section>
-
-      {/* Expandable Protocol Section */}
       <section
         className={`bg-gray-50 pt-8 pb-4 transition-all duration-500 ease-in-out overflow-hidden ${
           showProtocol ? "max-h-[2000px] opacity-100" : "max-h-0 opacity-0"
