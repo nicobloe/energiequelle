@@ -32,9 +32,43 @@ export default function Hero() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start flex-1">
             {/* Left side - Optionen */}
             <div className="lg:col-span-6 space-y-8">
+              {/* Neuer Titel für Termin Buchen */}
+              <div className="space-y-3 pt-4">
+                <p className="text-sm font-medium text-gray-500 uppercase tracking-wide">TERMIN BUCHEN:</p>
+
+                {/* Option 3: Persönliche Beratung */}
+                <div
+                  className={`group cursor-pointer transition-all duration-300 ${
+                    activeOption === 3 ? "scale-105" : "hover:scale-102"
+                  }`}
+                  onMouseEnter={() => setActiveOption(3)}
+                  onMouseLeave={() => setActiveOption(null)}
+                >
+                  <div className="bg-white border-2 border-[#968C83]/20 hover:border-[#968C83] rounded-xl p-4 shadow-sm hover:shadow-lg transition-all duration-300">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <div>
+                          <h3 className="font-bold text-gray-900">Persönliche Beratung</h3>
+                          <p className="text-sm text-gray-600">
+                            Individuelle Beratung mit Erich Zwyssig – persönlich vor Ort in Stans oder bequem per Zoom.
+                          </p>
+                        </div>
+                      </div>
+                      <Button
+                        asChild
+                        size="sm"
+                        className="bg-[#968C83] hover:bg-[#7a6f66] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      >
+                        <Link href="/contact">Termin buchen</Link>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               {/* Drei kompakte Optionen */}
               <div className="space-y-3">
-                <p className="text-sm font-medium text-gray-500 uppercase tracking-wide">Wählen Sie Ihren Weg:</p>
+                <p className="text-sm font-medium text-gray-500 uppercase tracking-wide">DIREKT ONLINE BESTELLEN:</p>
 
                 {/* Option 1: Balance Test */}
                 <div
@@ -119,35 +153,6 @@ export default function Hero() {
                         >
                           Bestellen
                         </Link>
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Option 3: Persönliche Beratung */}
-                <div
-                  className={`group cursor-pointer transition-all duration-300 ${
-                    activeOption === 3 ? "scale-105" : "hover:scale-102"
-                  }`}
-                  onMouseEnter={() => setActiveOption(3)}
-                  onMouseLeave={() => setActiveOption(null)}
-                >
-                  <div className="bg-white border-2 border-[#968C83]/20 hover:border-[#968C83] rounded-xl p-4 shadow-sm hover:shadow-lg transition-all duration-300">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <div>
-                          <h3 className="font-bold text-gray-900">Persönliche Beratung</h3>
-                          <p className="text-sm text-gray-600">
-                            Individuelle Beratung mit Erich Zwyssig – persönlich vor Ort in Stans oder bequem per Zoom.
-                          </p>
-                        </div>
-                      </div>
-                      <Button
-                        asChild
-                        size="sm"
-                        className="bg-[#968C83] hover:bg-[#7a6f66] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                      >
-                        <Link href="/contact">Termin buchen</Link>
                       </Button>
                     </div>
                   </div>
@@ -330,12 +335,6 @@ export default function Hero() {
           </div>
 
           <div className="mt-12 text-center">
-            <div className="inline-block bg-white px-8 py-4 rounded-lg border border-gray-200 mb-8">
-              <p className="text-xl font-medium text-gray-800">
-                ✓ Wissenschaftlich fundiert • ✓ 4-Monats-Programm • ✓ Messbare Ergebnisse
-              </p>
-            </div>
-
             <Button asChild className="cta-button">
               <Link
                 href="https://www.zinzino.com/shop/2020232820/CH/de-DE/products/premier-kits/health-protocol-kit/"
