@@ -13,7 +13,7 @@ export default function Hero() {
 
   return (
     <>
-      <section className="section pt-16 pb-8 md:pt-24 md:pb-12 bg-gradient-to-br from-gray-50 via-white to-blue-50 min-h-screen flex flex-col">
+      <section className="pt-16 pb-0 md:pt-24 md:pb-0 px-4 md:px-8 max-w-7xl mx-auto bg-gradient-to-br from-gray-50 via-white to-blue-50 min-h-screen flex flex-col">
         <div className="container mx-auto">
           {/* Zentralisierter Header-Bereich */}
           <div className="text-center mb-16">
@@ -215,7 +215,7 @@ export default function Hero() {
           </div>
 
           {/* Trust Signals */}
-          <div className="mt-12">
+          <div className="mt-12 mb-0 pb-0">
             <TrustSignals />
           </div>
         </div>
@@ -226,10 +226,6 @@ export default function Hero() {
         }`}
       >
         <div className="container mx-auto">
-          <h2 id="health-protocol-title" className="text-3xl font-bold mb-12 text-center">
-            Das 3-Schritte Gesundheitsprotokoll
-          </h2>
-
           {/* Schritt 1: Balance */}
           <div className="bg-white rounded-xl shadow-sm p-8 mb-8 border border-gray-100">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">

@@ -66,9 +66,9 @@ export default function Products({ layout = "grid" }: ProductsProps) {
   return (
     <>
       {/* Unsichtbarer Anker-Punkt für die Navigation */}
-      <div id="products" className="-mt-24 pt-24 invisible absolute"></div>
+      <div id="products" className="-mt-20 pt-20 invisible absolute"></div>
 
-      <section className="section bg-gray-50 pt-2 md:pt-4">
+      <section className="py-0 px-4 md:px-8 max-w-7xl mx-auto bg-gray-50 -mt-8">
         <h2 className="section-title">Unsere Produkte</h2>
         <p className="section-subtitle">
           Entdecken Sie die hochwertigen Nahrungsergänzungsmittel von Zinzino, die auf wissenschaftlicher Basis
