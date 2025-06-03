@@ -22,12 +22,13 @@ export default function Hero() {
               <div className="space-y-6">
                 <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
                   Deine Gesundheit
-                  <span className="text-[#9BCCED]"> messbar</span> verbessern
+                  <br />
+                  <span className="text-[#9BCCED]">messbar</span> verbessern
                 </h1>
 
                 <p className="text-xl text-gray-600 leading-relaxed max-w-lg">
-                  Entdecken Sie in nur 3 Minuten Ihren persönlichen Gesundheitsstatus und starten Sie Ihre Reise zu
-                  optimaler Vitalität.
+                  Starte mit einem einfachen Test von Zinzino – als offizieller Partner begleiten wir dich auf dem Weg
+                  zu mehr Balance und Wohlbefinden.
                 </p>
               </div>
 
@@ -85,10 +86,25 @@ export default function Hero() {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
                         <div>
-                          <h3 className="font-bold text-gray-900">Health Protocol Kit</h3>
+                          <h3 className="font-bold text-gray-900">Gesundheitsprotokoll Kit</h3>
                           <p className="text-sm text-gray-600">
-                            Das vollständige 3-Stufen-Programm für Ihre innere Balance und nachhaltige Vitalität.
+                            Das komplette 3-Stufen-Programm für deine Balance, Darmgesundheit und Vitalität.
                           </p>
+                          <button
+                            onClick={() => {
+                              setShowProtocol(true)
+                              // Kurze Verzögerung, damit der Bereich erst aufgeklappt wird
+                              setTimeout(() => {
+                                const protocolTitle = document.getElementById("health-protocol-title")
+                                if (protocolTitle) {
+                                  protocolTitle.scrollIntoView({ behavior: "smooth", block: "start" })
+                                }
+                              }, 100)
+                            }}
+                            className="text-[#9BCCED] text-xs hover:underline mt-1 block"
+                          >
+                            Mehr erfahren
+                          </button>
                         </div>
                       </div>
                       <Button
@@ -224,7 +240,9 @@ export default function Hero() {
         }`}
       >
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold mb-12 text-center">Das 3-Schritte Health Protocol</h2>
+          <h2 id="health-protocol-title" className="text-3xl font-bold mb-12 text-center">
+            Das 3-Schritte Gesundheitsprotokoll
+          </h2>
 
           {/* Schritt 1: Balance */}
           <div className="bg-white rounded-xl shadow-sm p-8 mb-8 border border-gray-100">

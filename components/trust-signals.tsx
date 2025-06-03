@@ -1,18 +1,6 @@
-import Image from "next/image"
-
 export default function TrustSignals() {
   return (
     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mt-6 bg-white/10 backdrop-blur-sm py-3 px-4 rounded-lg">
-      <div className="flex items-center">
-        <Image
-          src="/images/zinzino-independent-partner-logo-black.png"
-          alt="Offizieller Zinzino Partner"
-          width={120}
-          height={40}
-          className="h-8 w-auto object-contain bg-white rounded-md px-1"
-          unoptimized={true}
-        />
-      </div>
       <div className="flex items-center gap-6">
         <div className="flex items-center gap-2">
           <div className="bg-white/20 rounded-full p-1">
