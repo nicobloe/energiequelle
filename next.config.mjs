@@ -10,19 +10,14 @@ const nextConfig = {
   images: {
     domains: ['placeholder.com', 'v0.blob.com', 'images.pexels.com', 'blob.v0.dev'],
     formats: ['image/avif', 'image/webp'],
-    minimumCacheTTL: 60,
     unoptimized: true,
   },
-  skipTrailingSlashRedirect: true,
-  experimental: {
-    serverActions: {
-      bodySizeLimit: '2mb'
-    },
-    optimizePackageImports: ['lucide-react'],
-  },
-  serverExternalPackages: [],
   poweredByHeader: false,
   compress: true,
+  // Entferne experimentelle Features die Probleme verursachen könnten
+  experimental: {
+    optimizePackageImports: ['lucide-react'],
+  },
 }
 
 export default nextConfig
