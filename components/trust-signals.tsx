@@ -5,7 +5,7 @@ export default function TrustSignals() {
     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mt-6 bg-white/10 backdrop-blur-sm py-3 px-4 rounded-lg">
       <div className="flex items-center">
         <Image
-          src="/images/zinzino-independent-partner-logo.png"
+          src="/images/zinzino-independent-partner-logo-black.png"
           alt="Offizieller Zinzino Partner"
           width={120}
           height={40}

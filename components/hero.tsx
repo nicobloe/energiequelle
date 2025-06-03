@@ -4,79 +4,220 @@ import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ChevronDown } from "lucide-react"
+import { ChevronDown, Play, CheckCircle } from "lucide-react"
 import TrustSignals from "./trust-signals"
 
 export default function Hero() {
   const [showProtocol, setShowProtocol] = useState(false)
+  const [activeOption, setActiveOption] = useState<number | null>(null)
 
   return (
     <>
-      <section className="section pt-24 pb-8 md:pt-32 md:pb-12 bg-white">
+      <section className="section pt-16 pb-8 md:pt-24 md:pb-12 bg-gradient-to-br from-gray-50 via-white to-blue-50 min-h-screen flex items-center">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Left side - Text content */}
-            <div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 leading-tight">
-                ENTSCHLÜSSELN SIE DAS GEHEIMNIS FÜR EIN AUSGEGLICHENES LEBEN
-              </h1>
-              <h2 className="text-xl md:text-2xl font-medium mb-8 text-gray-700">
-                Starten Sie noch heute Ihre Reise zu einer besseren Gesundheit
-              </h2>
-              <p className="text-lg mb-8 text-gray-600 leading-relaxed">
-                Eine gute Gesundheit beginnt mit einem guten Gleichgewicht – vor allem in unseren Zellen, im Darm und im
-                Immunsystem. Beginnend mit einem einzigartigen Test stellt das dreistufige Zinzino-Gesundheitsprotokoll
-                in Ihrem Körper die Balance wieder her, stärkt ihn und trägt zu seiner Regeneration bei, so erhöhen sich
-                Ihre Chancen auf ein gesünderes und glücklicheres Leben.
-              </p>
+            <div className="lg:col-span-6 space-y-8">
+              {/* Hauptbotschaft */}
+              <div className="space-y-6">
+                <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                  Deine Gesundheit
+                  <span className="text-[#9BCCED]"> messbar</span> verbessern
+                </h1>
 
-              {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Button asChild className="cta-button">
-                  <Link
-                    href="https://www.zinzino.com/shop/2020232820/CH/de-DE/products/premier-kits/health-protocol-kit/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    KAUFE DAS HEALTH PROTOCOL KIT
-                  </Link>
-                </Button>
+                <p className="text-xl text-gray-600 leading-relaxed max-w-lg">
+                  Entdecken Sie in nur 3 Minuten Ihren persönlichen Gesundheitsstatus und starten Sie Ihre Reise zu
+                  optimaler Vitalität.
+                </p>
+              </div>
 
-                {/* Mehr erfahren Button */}
-                <Button
-                  variant="outline"
-                  onClick={() => setShowProtocol(!showProtocol)}
-                  className="border-[#9BCCED] text-[#9BCCED] flex items-center gap-2"
+              {/* Drei kompakte Optionen */}
+              <div className="space-y-3">
+                <p className="text-sm font-medium text-gray-500 uppercase tracking-wide">Wählen Sie Ihren Weg:</p>
+
+                {/* Option 1: Balance Test */}
+                <div
+                  className={`group cursor-pointer transition-all duration-300 ${
+                    activeOption === 1 ? "scale-105" : "hover:scale-102"
+                  }`}
+                  onMouseEnter={() => setActiveOption(1)}
+                  onMouseLeave={() => setActiveOption(null)}
                 >
-                  <span>Mehr erfahren</span>
+                  <div className="bg-white border-2 border-[#9BCCED]/20 hover:border-[#9BCCED] rounded-xl p-4 shadow-sm hover:shadow-lg transition-all duration-300">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <div>
+                          <h3 className="font-bold text-gray-900">Balance Test</h3>
+                          <p className="text-sm text-gray-600">
+                            Finde mit einer einfachen Blutanalyse heraus, wie es um deine Zellbalance steht.
+                          </p>
+                        </div>
+                      </div>
+                      <Button
+                        asChild
+                        size="sm"
+                        className="bg-[#9BCCED] hover:bg-[#7FB3E3] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      >
+                        <Link
+                          href="https://www.zinzino.com/shop/2020232820/CH/de-DE/products/shop/home-health-tests/309000/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Bestellen
+                        </Link>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Option 2: Health Protocol Kit */}
+                <div
+                  className={`group cursor-pointer transition-all duration-300 ${
+                    activeOption === 2 ? "scale-105" : "hover:scale-102"
+                  }`}
+                  onMouseEnter={() => setActiveOption(2)}
+                  onMouseLeave={() => setActiveOption(null)}
+                >
+                  <div className="bg-white border-2 border-[#968C83]/20 hover:border-[#968C83] rounded-xl p-4 shadow-sm hover:shadow-lg transition-all duration-300 relative">
+                    <div className="absolute -top-2 -right-2 bg-[#968C83] text-white text-xs px-2 py-1 rounded-full">
+                      Beliebt
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <div>
+                          <h3 className="font-bold text-gray-900">Health Protocol Kit</h3>
+                          <p className="text-sm text-gray-600">
+                            Das vollständige 3-Stufen-Programm für Ihre innere Balance und nachhaltige Vitalität.
+                          </p>
+                        </div>
+                      </div>
+                      <Button
+                        asChild
+                        size="sm"
+                        className="bg-[#968C83] hover:bg-[#7a6f66] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      >
+                        <Link
+                          href="https://www.zinzino.com/shop/2020232820/CH/de-DE/products/premier-kits/health-protocol-kit/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Bestellen
+                        </Link>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Option 3: Persönliche Beratung */}
+                <div
+                  className={`group cursor-pointer transition-all duration-300 ${
+                    activeOption === 3 ? "scale-105" : "hover:scale-102"
+                  }`}
+                  onMouseEnter={() => setActiveOption(3)}
+                  onMouseLeave={() => setActiveOption(null)}
+                >
+                  <div className="bg-white border-2 border-[#2aaa8a]/20 hover:border-[#2aaa8a] rounded-xl p-4 shadow-sm hover:shadow-lg transition-all duration-300">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <div>
+                          <h3 className="font-bold text-gray-900">Persönliche Beratung</h3>
+                          <p className="text-sm text-gray-600">
+                            Individuelle Beratung mit Erich Zwyssig – persönlich vor Ort in Stans oder bequem per Zoom.
+                          </p>
+                        </div>
+                      </div>
+                      <Button
+                        asChild
+                        size="sm"
+                        className="bg-[#2aaa8a] hover:bg-[#1d8a70] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      >
+                        <Link href="/contact">Termin buchen</Link>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Mehr erfahren */}
+              <div className="pt-4">
+                <Button
+                  variant="ghost"
+                  onClick={() => setShowProtocol(!showProtocol)}
+                  className="text-gray-500 hover:text-[#9BCCED] text-sm flex items-center gap-2 p-0"
+                >
+                  <Play className="h-4 w-4" />
+                  <span>Wie funktioniert das Gesundheitsprotokoll?</span>
                   <ChevronDown
-                    className={`h-5 w-5 transition-transform duration-300 ${showProtocol ? "rotate-180" : ""}`}
+                    className={`h-4 w-4 transition-transform duration-300 ${showProtocol ? "rotate-180" : ""}`}
                   />
                 </Button>
               </div>
-
-              <TrustSignals />
             </div>
 
-            {/* Right side - Product image */}
-            <div className="relative">
-              <div className="bg-gray-50 rounded-2xl p-8 flex items-center justify-center">
-                <Image
-                  src="/images/zinzino-health-protocol-kit.png"
-                  alt="Zinzino Health Protocol Kit - Komplettes Gesundheitsprogramm mit BalanceTest, BalanceOil+, Xtend+ und ZinoBiotic+"
-                  width={600}
-                  height={400}
-                  className="w-full h-auto object-contain"
-                  priority
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
+            {/* Right side - Interactive Product Showcase */}
+            <div className="lg:col-span-6">
+              <div className="relative">
+                {/* Hauptprodukt-Display */}
+                <div className="relative bg-gradient-to-br from-white to-gray-50 rounded-3xl p-8 shadow-2xl border border-gray-100">
+                  {/* Floating Elements */}
+                  <div className="absolute -top-4 -left-4 w-20 h-20 bg-[#9BCCED]/10 rounded-full blur-xl"></div>
+                  <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-[#968C83]/10 rounded-full blur-xl"></div>
+
+                  {/* Hauptbild */}
+                  <div className="relative z-10">
+                    <Image
+                      src="/images/zinzino-health-protocol-kit.png"
+                      alt="Zinzino Health Protocol Kit"
+                      width={700}
+                      height={500}
+                      className="w-full h-auto object-contain"
+                      priority
+                      sizes="(max-width: 768px) 100vw, 60vw"
+                    />
+                  </div>
+
+                  {/* Interaktive Produkt-Highlights */}
+                </div>
+
+                {/* Stats/Trust Indicators */}
+                <div className="mt-8 grid grid-cols-3 gap-4">
+                  <div className="text-center bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+                    <div className="text-2xl font-bold text-[#9BCCED]">1000+</div>
+                    <div className="text-xs text-gray-600">Zufriedene Kunden</div>
+                  </div>
+                  <div className="text-center bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+                    <div className="flex items-center justify-center gap-1 mb-1">
+                      <CheckCircle className="h-4 w-4 text-[#968C83]" />
+                      <div className="text-lg font-bold text-[#968C83]">100%</div>
+                    </div>
+                    <div className="text-xs text-gray-600">Wissenschaftlich validiert</div>
+                  </div>
+                  <div className="text-center bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+                    <div className="flex justify-center mb-2">
+                      <Image
+                        src="/images/zinzino-independent-partner-logo-black.png"
+                        alt="Offizieller Zinzino Partner"
+                        width={120}
+                        height={40}
+                        className="h-8 w-auto object-contain bg-white rounded-md px-2 py-1"
+                        unoptimized={true}
+                      />
+                    </div>
+                    <div className="text-xs text-gray-600">Offizieller Zinzino-Partner Schweiz</div>
+                  </div>
+                </div>
               </div>
             </div>
+          </div>
+
+          {/* Trust Signals */}
+          <div className="mt-12">
+            <TrustSignals />
           </div>
         </div>
       </section>
 
-      {/* Neuer Abschnitt für die Health Protocol Informationen */}
+      {/* Expandable Protocol Section */}
       <section
         className={`bg-gray-50 pt-8 pb-4 transition-all duration-500 ease-in-out overflow-hidden ${
           showProtocol ? "max-h-[2000px] opacity-100" : "max-h-0 opacity-0"
