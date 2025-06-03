@@ -9,15 +9,22 @@ const nextConfig = {
   },
   images: {
     domains: ['placeholder.com', 'v0.blob.com', 'images.pexels.com', 'blob.v0.dev'],
-    formats: ['image/avif', 'image/webp'],
     unoptimized: true,
   },
   poweredByHeader: false,
   compress: true,
-  // Entferne experimentelle Features die Probleme verursachen könnten
+  // Deaktiviere Build-Tracing um das Problem zu umgehen
   experimental: {
-    optimizePackageImports: ['lucide-react'],
+    outputFileTracingExcludes: {
+      '*': [
+        'node_modules/@swc/core-linux-x64-gnu',
+        'node_modules/@swc/core-linux-x64-musl',
+        'node_modules/@esbuild/linux-x64',
+      ],
+    },
   },
+  // Reduziere die Anzahl der zu verfolgenden Dateien
+  outputFileTracing: false,
 }
 
 export default nextConfig
