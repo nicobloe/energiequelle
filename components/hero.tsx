@@ -78,8 +78,8 @@ export default function Hero() {
                   onMouseEnter={() => setActiveOption(2)}
                   onMouseLeave={() => setActiveOption(null)}
                 >
-                  <div className="bg-white border-2 border-[#968C83]/20 hover:border-[#968C83] rounded-xl p-4 shadow-sm hover:shadow-lg transition-all duration-300 relative">
-                    <div className="absolute -top-2 -right-2 bg-[#968C83] text-white text-xs px-2 py-1 rounded-full">
+                  <div className="bg-white border-2 border-[#9BCCED]/20 hover:border-[#9BCCED] rounded-xl p-4 shadow-sm hover:shadow-lg transition-all duration-300 relative">
+                    <div className="absolute -top-2 -right-2 bg-[#9BCCED] text-white text-xs px-2 py-1 rounded-full">
                       Beliebt
                     </div>
                     <div className="flex items-center justify-between">
@@ -94,7 +94,7 @@ export default function Hero() {
                       <Button
                         asChild
                         size="sm"
-                        className="bg-[#968C83] hover:bg-[#7a6f66] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        className="bg-[#9BCCED] hover:bg-[#7FB3E3] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                       >
                         <Link
                           href="https://www.zinzino.com/shop/2020232820/CH/de-DE/products/premier-kits/health-protocol-kit/"
@@ -116,7 +116,7 @@ export default function Hero() {
                   onMouseEnter={() => setActiveOption(3)}
                   onMouseLeave={() => setActiveOption(null)}
                 >
-                  <div className="bg-white border-2 border-[#2aaa8a]/20 hover:border-[#2aaa8a] rounded-xl p-4 shadow-sm hover:shadow-lg transition-all duration-300">
+                  <div className="bg-white border-2 border-[#968C83]/20 hover:border-[#968C83] rounded-xl p-4 shadow-sm hover:shadow-lg transition-all duration-300">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
                         <div>
@@ -129,7 +129,7 @@ export default function Hero() {
                       <Button
                         asChild
                         size="sm"
-                        className="bg-[#2aaa8a] hover:bg-[#1d8a70] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        className="bg-[#968C83] hover:bg-[#7a6f66] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                       >
                         <Link href="/contact">Termin buchen</Link>
                       </Button>
