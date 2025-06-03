@@ -13,25 +13,25 @@ export default function Hero() {
 
   return (
     <>
-      <section className="section pt-16 pb-8 md:pt-24 md:pb-12 bg-gradient-to-br from-gray-50 via-white to-blue-50 min-h-screen flex items-center">
+      <section className="section pt-16 pb-8 md:pt-24 md:pb-12 bg-gradient-to-br from-gray-50 via-white to-blue-50 min-h-screen flex flex-col">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            {/* Left side - Text content */}
+          {/* Zentralisierter Header-Bereich */}
+          <div className="text-center mb-16">
+            <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+              Deine Gesundheit
+              <br />
+              <span className="text-[#9BCCED]">messbar</span> verbessern
+            </h1>
+            <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+              Starte mit einem einfachen Test von Zinzino – als offizieller Partner begleiten wir dich auf dem Weg zu
+              mehr Balance und Wohlbefinden.
+            </p>
+          </div>
+
+          {/* Hauptinhalt: Optionen und Bild auf gleicher Höhe */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start flex-1">
+            {/* Left side - Optionen */}
             <div className="lg:col-span-6 space-y-8">
-              {/* Hauptbotschaft */}
-              <div className="space-y-6">
-                <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                  Deine Gesundheit
-                  <br />
-                  <span className="text-[#9BCCED]">messbar</span> verbessern
-                </h1>
-
-                <p className="text-xl text-gray-600 leading-relaxed max-w-lg">
-                  Starte mit einem einfachen Test von Zinzino – als offizieller Partner begleiten wir dich auf dem Weg
-                  zu mehr Balance und Wohlbefinden.
-                </p>
-              </div>
-
               {/* Drei kompakte Optionen */}
               <div className="space-y-3">
                 <p className="text-sm font-medium text-gray-500 uppercase tracking-wide">Wählen Sie Ihren Weg:</p>
@@ -191,8 +191,6 @@ export default function Hero() {
                       sizes="(max-width: 768px) 100vw, 60vw"
                     />
                   </div>
-
-                  {/* Interaktive Produkt-Highlights */}
                 </div>
 
                 {/* Stats/Trust Indicators */}
