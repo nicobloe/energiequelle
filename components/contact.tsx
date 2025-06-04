@@ -6,7 +6,15 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin } from "lucide-react"
+import { Mail, Phone, MapPin, Send, Calendar, MessageCircle } from "lucide-react"
+
+// Safe string handling function
+const safeString = (value: any): string => {
+  if (value === null || value === undefined) {
+    return ""
+  }
+  return String(value)
+}
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -17,13 +25,17 @@ export default function Contact() {
   })
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
+    if (!e || !e.target) return
+
+    const name = e.target.name || ""
+    const value = e.target.value || ""
+
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Hier würde die Logik zum Absenden des Formulars implementiert werden
+    if (e) e.preventDefault()
+
     console.log("Form submitted:", formData)
     alert("Vielen Dank für deine Nachricht! Wir werden uns in Kürze bei dir melden.")
     setFormData({ firstName: "", lastName: "", email: "", message: "" })
@@ -31,163 +43,160 @@ export default function Contact() {
 
   return (
     <>
-      {/* Unsichtbarer Anker-Punkt für die Navigation */}
       <div id="contact" className="-mt-24 pt-24 invisible absolute"></div>
 
-      <section className="section pt-8 md:pt-12">
-        <h2 className="section-title">Kontaktiere mich</h2>
-        <p className="section-subtitle">
-          Hast du Fragen zu Zinzino-Produkten oder möchtest du mehr über eine Partnerschaft erfahren? Ich bin für dich
-          da!
-        </p>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">
-          <div>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="firstName" className="block text-sm font-medium mb-2">
-                    Vorname
-                  </label>
-                  <Input
-                    id="firstName"
-                    name="firstName"
-                    value={formData.firstName}
-                    onChange={handleChange}
-                    required
-                    className="w-full"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="lastName" className="block text-sm font-medium mb-2">
-                    Name
-                  </label>
-                  <Input
-                    id="lastName"
-                    name="lastName"
-                    value={formData.lastName}
-                    onChange={handleChange}
-                    required
-                    className="w-full"
-                  />
-                </div>
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">
-                  E-Mail
-                </label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">
-                  Nachricht
-                </label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  className="w-full min-h-[150px]"
-                />
-              </div>
-              <Button type="submit" className="cta-button w-full">
-                Nachricht senden
-              </Button>
-            </form>
+      <section className="py-24 px-4">
+        <div className="max-w-7xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-20">
+            <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
+              Endlich, ein Gespräch das
+              <br />
+              <span className="text-[#9BCCED]">weiterbringt</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Hast du Fragen zu Zinzino-Produkten oder möchtest du mehr über eine Partnerschaft erfahren? Ich bin für
+              dich da!
+            </p>
           </div>
 
-          <div className="bg-gray-50 p-5 rounded-lg">
-            <h3 className="text-2xl font-bold mb-6">Kontaktinformationen</h3>
-            <div className="space-y-6">
-              <div className="flex items-start">
-                <Mail className="h-6 w-6 text-[#9BCCED] mr-4" />
-                <div>
-                  <h4 className="font-medium">E-Mail</h4>
-                  <p className="text-gray-600">info@energiequelle.ch</p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            {/* Left - Contact Form */}
+            <div className="bg-white rounded-3xl p-8 shadow-xl">
+              <div className="mb-8">
+                <div className="w-12 h-12 bg-[#9BCCED]/10 rounded-2xl flex items-center justify-center mb-4">
+                  <MessageCircle className="h-6 w-6 text-[#9BCCED]" />
                 </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Schreib mir eine Nachricht</h3>
+                <p className="text-gray-600">Ich antworte normalerweise innerhalb von 24 Stunden</p>
               </div>
-              <div className="flex items-start">
-                <Phone className="h-6 w-6 text-[#9BCCED] mr-4" />
-                <div>
-                  <h4 className="font-medium">Telefon</h4>
-                  <p className="text-gray-600">+41 (0)79 690 84 34</p>
+
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
+                      Vorname
+                    </label>
+                    <Input
+                      id="firstName"
+                      name="firstName"
+                      value={formData.firstName || ""}
+                      onChange={handleChange}
+                      required
+                      className="rounded-xl border-gray-200 focus:border-[#9BCCED] focus:ring-[#9BCCED]"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
+                      Name
+                    </label>
+                    <Input
+                      id="lastName"
+                      name="lastName"
+                      value={formData.lastName || ""}
+                      onChange={handleChange}
+                      required
+                      className="rounded-xl border-gray-200 focus:border-[#9BCCED] focus:ring-[#9BCCED]"
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className="flex items-start">
-                <MapPin className="h-6 w-6 text-[#9BCCED] mr-4" />
                 <div>
-                  <h4 className="font-medium">Adresse</h4>
-                  <p className="text-gray-600">Mühlebachstrasse 5</p>
-                  <p className="text-gray-600">6370 Stans</p>
-                  <p className="text-gray-600">Schweiz</p>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    E-Mail
+                  </label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    value={formData.email || ""}
+                    onChange={handleChange}
+                    required
+                    className="rounded-xl border-gray-200 focus:border-[#9BCCED] focus:ring-[#9BCCED]"
+                  />
                 </div>
-              </div>
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                    Nachricht
+                  </label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    value={formData.message || ""}
+                    onChange={handleChange}
+                    required
+                    className="rounded-xl border-gray-200 focus:border-[#9BCCED] focus:ring-[#9BCCED] min-h-[120px]"
+                  />
+                </div>
+                <Button type="submit" className="w-full bg-[#9BCCED] hover:bg-[#7FB3E3] rounded-xl font-semibold py-3">
+                  Nachricht senden
+                  <Send className="h-4 w-4 ml-2" />
+                </Button>
+              </form>
             </div>
 
-            <div className="mt-8">
-              <h4 className="font-medium mb-2">Folge uns</h4>
-              <div className="flex space-x-4">
-                <a href="#" className="text-gray-600 hover:text-[#9BCCED]">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="lucide lucide-facebook"
-                  >
-                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                  </svg>
-                </a>
-                <a href="#" className="text-gray-600 hover:text-[#9BCCED]">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="lucide lucide-instagram"
-                  >
-                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                  </svg>
-                </a>
-                <a href="#" className="text-gray-600 hover:text-[#9BCCED]">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="lucide lucide-linkedin"
-                  >
-                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                    <rect width="4" height="12" x="2" y="9" />
-                    <circle cx="4" cy="4" r="2" />
-                  </svg>
-                </a>
+            {/* Right - Contact Info & Quick Actions */}
+            <div className="space-y-8">
+              {/* Contact Info Card */}
+              <div className="bg-[#968C83] rounded-3xl p-8 text-white">
+                <div className="mb-8">
+                  <h3 className="text-2xl font-bold mb-2">Kontaktinformationen</h3>
+                  <p className="opacity-90">Erreiche mich direkt über diese Kanäle</p>
+                </div>
+
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center">
+                      <Mail className="h-6 w-6" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold mb-1">E-Mail</h4>
+                      <p className="opacity-90">info@energiequelle.ch</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center">
+                      <Phone className="h-6 w-6" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold mb-1">Telefon</h4>
+                      <p className="opacity-90">+41 (0)79 690 84 34</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center">
+                      <MapPin className="h-6 w-6" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold mb-1">Adresse</h4>
+                      <p className="opacity-90">
+                        Mühlebachstrasse 5<br />
+                        6370 Stans
+                        <br />
+                        Schweiz
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Quick Action Card */}
+              <div className="bg-[#9BCCED] rounded-3xl p-8 text-white">
+                <div className="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center mb-6">
+                  <Calendar className="h-6 w-6" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Persönlichen Termin buchen</h3>
+                <p className="opacity-90 mb-6">
+                  Buche einen kostenlosen Beratungstermin - vor Ort in Stans oder online per Zoom.
+                </p>
+                <Button className="bg-white text-[#9BCCED] hover:bg-gray-100 rounded-xl font-semibold w-full">
+                  Termin vereinbaren
+                </Button>
+              </div>
+
+              {/* Response Time Badge */}
+              <div className="bg-white rounded-2xl p-6 shadow-lg text-center">
+                <div className="text-2xl font-bold text-[#9BCCED]">{"< 24h"}</div>
+                <div className="text-sm text-gray-600">Durchschnittliche Antwortzeit</div>
               </div>
             </div>
           </div>

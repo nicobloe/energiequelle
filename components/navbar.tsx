@@ -20,18 +20,21 @@ export default function Navbar() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const [isMobileNavLoaded, setIsMobileNavLoaded] = useState(false)
   const router = useRouter()
-  const pathname = usePathname()
+  const pathname = usePathname() || ""
 
   // Funktion zum sanften Scrollen zu einer Sektion (nur auf der Startseite)
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
     e.preventDefault()
-    const section = document.getElementById(sectionId.replace("#", ""))
-    if (section) {
-      window.scrollTo({
-        top: section.offsetTop - 100, // 100px Offset für die Navbar
-        behavior: "smooth",
-      })
-      setActiveSection(sectionId)
+    const cleanSectionId = (sectionId || "").replace("#", "")
+    if (cleanSectionId) {
+      const section = document.getElementById(cleanSectionId)
+      if (section) {
+        window.scrollTo({
+          top: section.offsetTop - 100, // 100px Offset für die Navbar
+          behavior: "smooth",
+        })
+        setActiveSection(sectionId)
+      }
     }
   }
 
@@ -53,7 +56,7 @@ export default function Navbar() {
 
   // Aktive Sektion beim Scrollen erkennen (nur auf der Startseite)
   useEffect(() => {
-    if (pathname !== "/" && pathname !== "") return
+    if (!pathname || (pathname !== "/" && pathname !== "")) return
 
     const handleScroll = () => {
       const sections = document.querySelectorAll("section[id]")
@@ -77,6 +80,8 @@ export default function Navbar() {
 
   // Dropdown-Menü öffnen/schließen
   const toggleDropdown = (name: string) => {
+    if (!name) return
+
     if (openDropdown === name) {
       setOpenDropdown(null)
     } else {
@@ -88,7 +93,7 @@ export default function Navbar() {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement
-      if (!target.closest(".dropdown-trigger") && !target.closest(".dropdown-menu")) {
+      if (target && !target.closest(".dropdown-trigger") && !target.closest(".dropdown-menu")) {
         setOpenDropdown(null)
       }
     }
@@ -197,72 +202,81 @@ export default function Navbar() {
         </Link>
 
         <nav className="hidden md:flex items-center space-x-6">
-          {navItems.map((item) =>
-            item.isDropdown ? (
-              <div key={item.name} className="relative">
+          {navItems.map((item) => {
+            const itemName = item.name || ""
+            const itemHref = item.href || "#"
+            const itemSectionHref = item.sectionHref || ""
+
+            return item.isDropdown ? (
+              <div key={itemName} className="relative">
                 <button
-                  onClick={() => toggleDropdown(item.name)}
+                  onClick={() => toggleDropdown(itemName)}
                   className={cn(
                     "dropdown-trigger flex items-center text-lg font-medium transition-colors focus:outline-none text-white",
-                    openDropdown === item.name ? "text-[#9BCCED]" : "hover:text-[#9BCCED]",
+                    openDropdown === itemName ? "text-[#9BCCED]" : "hover:text-[#9BCCED]",
                   )}
-                  aria-expanded={openDropdown === item.name}
+                  aria-expanded={openDropdown === itemName}
                   aria-haspopup="true"
                 >
-                  {item.name}
+                  {itemName}
                   <ChevronDown
                     className={cn(
                       "ml-1 h-4 w-4 transition-transform duration-200",
-                      openDropdown === item.name ? "rotate-180" : "",
+                      openDropdown === itemName ? "rotate-180" : "",
                     )}
                   />
                 </button>
-                {openDropdown === item.name && (
+                {openDropdown === itemName && (
                   <div
                     className="dropdown-menu absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-100 overflow-hidden z-50"
                     onMouseLeave={() => setTimeout(() => setOpenDropdown(null), 200)}
                   >
                     <div className="py-2">
-                      {item.items?.map((subItem) => (
-                        <Link
-                          key={subItem.name}
-                          href={subItem.href}
-                          onClick={() => {
-                            setOpenDropdown(null)
-                          }}
-                          className="block px-4 py-3 hover:bg-gray-50 transition-colors group"
-                        >
-                          <div className="font-medium text-gray-900 group-hover:text-[#9BCCED] transition-colors">
-                            {subItem.name}
-                          </div>
-                          {subItem.description && (
-                            <div className="text-sm text-gray-500 mt-0.5">{subItem.description}</div>
-                          )}
-                        </Link>
-                      ))}
+                      {(item.items || []).map((subItem) => {
+                        const subItemName = subItem.name || ""
+                        const subItemHref = subItem.href || "#"
+                        const subItemDescription = subItem.description || ""
+
+                        return (
+                          <Link
+                            key={subItemName}
+                            href={subItemHref}
+                            onClick={() => {
+                              setOpenDropdown(null)
+                            }}
+                            className="block px-4 py-3 hover:bg-gray-50 transition-colors group"
+                          >
+                            <div className="font-medium text-gray-900 group-hover:text-[#9BCCED] transition-colors">
+                              {subItemName}
+                            </div>
+                            {subItemDescription && (
+                              <div className="text-sm text-gray-500 mt-0.5">{subItemDescription}</div>
+                            )}
+                          </Link>
+                        )
+                      })}
                     </div>
                   </div>
                 )}
               </div>
             ) : (
               <Link
-                key={item.name}
-                href={item.href}
-                onClick={() => {}}
+                key={itemName}
+                href={itemHref}
                 className={cn(
                   "text-lg font-medium transition-colors relative text-white",
-                  (isHomePage && activeSection === item.sectionHref) || pathname === item.href
+                  (isHomePage && activeSection === itemSectionHref) || pathname === itemHref
                     ? "text-[#9BCCED] font-semibold"
                     : "hover:text-[#9BCCED]",
                 )}
               >
-                {item.name}
-                {((isHomePage && activeSection === item.sectionHref) || pathname === item.href) && (
+                {itemName}
+                {((isHomePage && activeSection === itemSectionHref) || pathname === itemHref) && (
                   <span className="absolute -bottom-1.5 left-0 w-full h-0.5 bg-[#9BCCED] rounded-full" />
                 )}
               </Link>
-            ),
-          )}
+            )
+          })}
           <Button
             asChild
             className="bg-[#9BCCED] hover:bg-[#7FB3E3] text-white font-bold py-2 px-4 rounded transition-all duration-200 hover:shadow-md flex items-center gap-1.5"

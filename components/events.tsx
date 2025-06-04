@@ -3,6 +3,14 @@ import { Card, CardContent } from "@/components/ui/card"
 import { CalendarIcon, Clock, MapPin } from "lucide-react"
 import Link from "next/link"
 
+// Safe string handling function
+const safeString = (value: any): string => {
+  if (value === null || value === undefined) {
+    return ""
+  }
+  return String(value)
+}
+
 const events = [
   {
     id: 1,
@@ -41,53 +49,64 @@ export default function Events() {
       {/* Unsichtbarer Anker-Punkt für die Navigation */}
       <div id="events" className="-mt-24 pt-24 invisible absolute"></div>
 
-      <section className="section bg-gray-50 pt-8 md:pt-12">
-        <h2 className="section-title">Kommende Events</h2>
-        <p className="section-subtitle">
-          Nehmen Sie an unseren Veranstaltungen teil und erfahren Sie mehr über Gesundheit und Wohlbefinden
-        </p>
+      <section className="section pt-8 md:pt-12">
+        <div className="container mx-auto px-4">
+          <h2 className="section-title">Kommende Events</h2>
+          <p className="section-subtitle">
+            Nehmen Sie an unseren Veranstaltungen teil und erfahren Sie mehr über Gesundheit und Wohlbefinden
+          </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-          {events.map((event) => (
-            <Card key={event.id} className="h-full product-card">
-              <CardContent className="p-6 flex flex-col h-full">
-                <div className="mb-4 pb-4 border-b">
-                  <span
-                    className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-2 ${
-                      event.type === "online" ? "bg-blue-100 text-blue-600" : "bg-green-100 text-green-600"
-                    }`}
-                  >
-                    {event.type === "online" ? "Online" : "Vor Ort"}
-                  </span>
-                  <h3 className="text-xl font-bold mb-2">{event.title}</h3>
-                  <p className="text-gray-600">{event.description}</p>
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            {events.map((event) => {
+              const eventTitle = safeString(event.title)
+              const eventDescription = safeString(event.description)
+              const eventDate = safeString(event.date)
+              const eventTime = safeString(event.time)
+              const eventLocation = safeString(event.location)
+              const eventType = safeString(event.type)
 
-                <div className="mt-auto">
-                  <div className="flex items-center text-sm text-gray-500 mb-2">
-                    <CalendarIcon className="h-4 w-4 mr-2" />
-                    <span>{event.date}</span>
-                  </div>
-                  <div className="flex items-center text-sm text-gray-500 mb-2">
-                    <Clock className="h-4 w-4 mr-2" />
-                    <span>{event.time}</span>
-                  </div>
-                  <div className="flex items-center text-sm text-gray-500 mb-4">
-                    <MapPin className="h-4 w-4 mr-2" />
-                    <span>{event.location}</span>
-                  </div>
+              return (
+                <Card key={event.id || 0} className="h-full product-card">
+                  <CardContent className="p-6 flex flex-col h-full">
+                    <div className="mb-4 pb-4 border-b">
+                      <span
+                        className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-2 ${
+                          eventType === "online" ? "bg-blue-100 text-blue-600" : "bg-green-100 text-green-600"
+                        }`}
+                      >
+                        {eventType === "online" ? "Online" : "Vor Ort"}
+                      </span>
+                      <h3 className="text-xl font-bold mb-2">{eventTitle}</h3>
+                      <p className="text-gray-600">{eventDescription}</p>
+                    </div>
 
-                  <Button className="w-full cta-button">Anmelden</Button>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+                    <div className="mt-auto">
+                      <div className="flex items-center text-sm text-gray-500 mb-2">
+                        <CalendarIcon className="h-4 w-4 mr-2" />
+                        <span>{eventDate}</span>
+                      </div>
+                      <div className="flex items-center text-sm text-gray-500 mb-2">
+                        <Clock className="h-4 w-4 mr-2" />
+                        <span>{eventTime}</span>
+                      </div>
+                      <div className="flex items-center text-sm text-gray-500 mb-4">
+                        <MapPin className="h-4 w-4 mr-2" />
+                        <span>{eventLocation}</span>
+                      </div>
 
-        <div className="text-center mt-12">
-          <Link href="/events">
-            <Button className="cta-button">Alle Events anzeigen</Button>
-          </Link>
+                      <Button className="w-full cta-button">Anmelden</Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              )
+            })}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link href="/events">
+              <Button className="cta-button">Alle Events anzeigen</Button>
+            </Link>
+          </div>
         </div>
       </section>
     </>

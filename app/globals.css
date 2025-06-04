@@ -44,6 +44,9 @@ body {
 
 .section {
   @apply py-12 px-4 md:px-8 max-w-7xl mx-auto relative;
+  /* Entferne Ränder und Schatten */
+  border: none;
+  box-shadow: none;
 }
 
 /* Nicht-kritische Stile können später geladen werden */
@@ -59,7 +62,48 @@ body {
   will-change: transform;
 }
 
+/* Verbessere die Übergänge zwischen Abschnitten mit unterschiedlichen Hintergründen */
+.bg-gray-50 {
+  /* Sanfterer Übergang zum weißen Hintergrund */
+  background-color: #f9fafb;
+  /* Entferne Ränder */
+  border: none;
+  /* Entferne Schatten */
+  box-shadow: none;
+}
+
+/* Entferne sichtbare Ränder bei Container-Elementen */
+.container {
+  /* Entferne Ränder */
+  border: none;
+  /* Entferne Schatten */
+  box-shadow: none;
+}
+
+/* Verbessere die Übergänge zwischen Abschnitten */
+section {
+  /* Entferne Ränder */
+  border: none;
+  /* Entferne Schatten */
+  box-shadow: none;
+  /* Sanftere Übergänge */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Verbessere die Übergänge zwischen Abschnitten mit unterschiedlichen Hintergründen */
+section + section {
+  /* Reduziere den Abstand zwischen aufeinanderfolgenden Abschnitten */
+  margin-top: 0;
+  padding-top: 3rem;
+}
+
+/* Verbessere die Darstellung der Produkt-Karten */
 .product-card {
+  /* Sanftere Schatten */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  /* Entferne harte Ränder */
+  border: none;
   @apply bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-xl hover:-translate-y-1;
   will-change: transform, box-shadow;
 }

@@ -26,10 +26,16 @@ interface MobileNavContentProps {
   activeSection: string
 }
 
-export default function MobileNavContent({ navItems, isHomePage, activeSection }: MobileNavContentProps) {
+export default function MobileNavContent({
+  navItems = [],
+  isHomePage = false,
+  activeSection = "",
+}: MobileNavContentProps) {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
 
   const toggleDropdown = (name: string) => {
+    if (!name) return
+
     if (openDropdown === name) {
       setOpenDropdown(null)
     } else {
@@ -37,61 +43,82 @@ export default function MobileNavContent({ navItems, isHomePage, activeSection }
     }
   }
 
+  // Sichere Funktion zum Abrufen des aktuellen Pfads
+  const getCurrentPath = () => {
+    if (typeof window !== "undefined" && window.location) {
+      return window.location.pathname || ""
+    }
+    return ""
+  }
+
+  const currentPath = getCurrentPath()
+
   return (
     <div className="flex flex-col space-y-4 mt-8">
-      {navItems.map((item) =>
-        item.isDropdown ? (
-          <div key={item.name} className="space-y-2">
+      {navItems.map((item) => {
+        const itemName = item.name || ""
+        const itemHref = item.href || "#"
+        const itemSectionHref = item.sectionHref || ""
+
+        return item.isDropdown ? (
+          <div key={itemName} className="space-y-2">
             <button
-              onClick={() => toggleDropdown(item.name)}
+              onClick={() => toggleDropdown(itemName)}
               className="flex items-center justify-between w-full text-lg font-medium"
             >
-              <span>{item.name}</span>
+              <span>{itemName}</span>
               <ChevronDown
                 className={cn(
                   "h-4 w-4 transition-transform duration-200",
-                  openDropdown === item.name ? "rotate-180" : "",
+                  openDropdown === itemName ? "rotate-180" : "",
                 )}
               />
             </button>
             <div
               className={cn(
                 "pl-4 border-l-2 border-gray-200 space-y-3 overflow-hidden transition-all duration-300",
-                openDropdown === item.name ? "max-h-96" : "max-h-0",
+                openDropdown === itemName ? "max-h-96" : "max-h-0",
               )}
             >
-              {item.items?.map((subItem) => (
-                <Link
-                  key={subItem.name}
-                  href={subItem.href}
-                  className={cn(
-                    "block transition-colors",
-                    (isHomePage && activeSection === subItem.sectionHref) || location.pathname === subItem.href
-                      ? "text-[#9BCCED] font-semibold"
-                      : "hover:text-[#9BCCED]",
-                  )}
-                >
-                  <div>{subItem.name}</div>
-                  {subItem.description && <div className="text-xs text-gray-500 mt-0.5">{subItem.description}</div>}
-                </Link>
-              ))}
+              {(item.items || []).map((subItem) => {
+                const subItemName = subItem.name || ""
+                const subItemHref = subItem.href || "#"
+                const subItemSectionHref = subItem.sectionHref || ""
+                const subItemDescription = subItem.description || ""
+
+                return (
+                  <Link
+                    key={subItemName}
+                    href={subItemHref}
+                    className={cn(
+                      "block transition-colors",
+                      (isHomePage && activeSection === subItemSectionHref) || currentPath === subItemHref
+                        ? "text-[#9BCCED] font-semibold"
+                        : "hover:text-[#9BCCED]",
+                    )}
+                  >
+                    <div>{subItemName}</div>
+                    {subItemDescription && <div className="text-xs text-gray-500 mt-0.5">{subItemDescription}</div>}
+                  </Link>
+                )
+              })}
             </div>
           </div>
         ) : (
           <Link
-            key={item.name}
-            href={item.href || "#"}
+            key={itemName}
+            href={itemHref}
             className={cn(
               "text-lg font-medium transition-colors",
-              (isHomePage && activeSection === item.sectionHref) || location.pathname === item.href
+              (isHomePage && activeSection === itemSectionHref) || currentPath === itemHref
                 ? "text-[#9BCCED] font-semibold"
                 : "hover:text-[#9BCCED]",
             )}
           >
-            {item.name}
+            {itemName}
           </Link>
-        ),
-      )}
+        )
+      })}
       <Button
         asChild
         className="bg-[#9BCCED] hover:bg-[#7FB3E3] text-white font-bold py-2 px-4 rounded w-full mt-4 flex items-center justify-center gap-1.5"

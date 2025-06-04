@@ -19,16 +19,18 @@ interface TestimonialCardProps {
 
 // Funktion, um die Initialen einer Person zu erhalten (als Fallback)
 function getInitials(name: string) {
-  return name
+  const safeName = name || "Unknown"
+  return safeName
     .split(" ")
-    .map((part) => part[0])
+    .map((part) => (part || "").charAt(0))
     .join("")
+    .toUpperCase()
 }
 
 // Funktion, um eine Hintergrundfarbe basierend auf der ID zu generieren (als Fallback)
 function getBackgroundColor(id: number) {
   const colors = ["#2aaa8a", "#38C0B2", "#3CD8C8", "#FFA500", "#FF8C00"]
-  return colors[id % colors.length]
+  return colors[id % colors.length] || "#2aaa8a"
 }
 
 export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
@@ -44,7 +46,7 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
 
     if (ctx) {
       // Hintergrund
-      ctx.fillStyle = getBackgroundColor(testimonial.id)
+      ctx.fillStyle = getBackgroundColor(testimonial.id || 0)
       ctx.fillRect(0, 0, canvas.width, canvas.height)
 
       // Text
@@ -52,12 +54,19 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
       ctx.font = "bold 160px Arial"
       ctx.textAlign = "center"
       ctx.textBaseline = "middle"
-      ctx.fillText(getInitials(testimonial.name), canvas.width / 2, canvas.height / 2)
+      ctx.fillText(getInitials(testimonial.name || ""), canvas.width / 2, canvas.height / 2)
 
       // Setze das Canvas als Bildquelle
       target.src = canvas.toDataURL("image/png")
     }
   }
+
+  const safeName = testimonial.name || ""
+  const safeText = testimonial.text || ""
+  const safeProduct = testimonial.product || ""
+  const safeLocation = testimonial.location || ""
+  const safeImageUrl = testimonial.imageUrl || "/placeholder.svg"
+  const safeRating = testimonial.rating || 0
 
   return (
     <Card className="border-none shadow-lg">
@@ -66,14 +75,14 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
           {[...Array(5)].map((_, i) => (
             <StarIcon
               key={i}
-              className={`h-5 w-5 ${i < testimonial.rating ? "text-[#FFA500] fill-[#FFA500]" : "text-gray-300"}`}
+              className={`h-5 w-5 ${i < safeRating ? "text-[#FFA500] fill-[#FFA500]" : "text-gray-300"}`}
             />
           ))}
         </div>
         <div className="mb-4 h-48 overflow-hidden rounded-lg bg-gray-50">
           <img
-            src={testimonial.imageUrl || "/placeholder.svg"}
-            alt={`${testimonial.name} aus ${testimonial.location}`}
+            src={safeImageUrl || "/placeholder.svg"}
+            alt={`${safeName} aus ${safeLocation}`}
             className="w-full h-full object-cover"
             onError={handleImageError}
           />
@@ -81,13 +90,13 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
         <div className="flex items-center mb-4">
           <Quote className="h-8 w-8 text-[#2aaa8a] mr-2" />
           <div>
-            <h3 className="font-bold">{testimonial.name}</h3>
+            <h3 className="font-bold">{safeName}</h3>
             <p className="text-sm text-gray-500">
-              Produkt: {testimonial.product} • {testimonial.location}
+              Produkt: {safeProduct} • {safeLocation}
             </p>
           </div>
         </div>
-        <p className="text-gray-700 italic">"{testimonial.text}"</p>
+        <p className="text-gray-700 italic">"{safeText}"</p>
       </CardContent>
     </Card>
   )

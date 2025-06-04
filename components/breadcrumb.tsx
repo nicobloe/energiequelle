@@ -18,10 +18,10 @@ const pathMap: Record<string, string> = {
 }
 
 export default function Breadcrumb() {
-  const pathname = usePathname()
+  const pathname = usePathname() || ""
 
   // Wenn wir auf der Startseite sind, keine Breadcrumbs anzeigen
-  if (pathname === "/") return null
+  if (!pathname || pathname === "/") return null
 
   // Pfad in Segmente aufteilen und das erste leere Segment entfernen
   const segments = pathname.split("/").filter(Boolean)
@@ -45,17 +45,19 @@ export default function Breadcrumb() {
           const path = `/${segments.slice(0, index + 1).join("/")}`
           // Prüfen, ob es das letzte Segment ist
           const isLast = index === segments.length - 1
+          // Sicherer Segment-Name
+          const segmentName = segment || ""
 
           return (
             <li key={path} className="flex items-center">
               {isLast ? (
                 <span className="font-medium text-[#9BCCED]" aria-current="page">
-                  {pathMap[segment] || segment}
+                  {pathMap[segmentName] || segmentName}
                 </span>
               ) : (
                 <>
                   <Link href={path} className="text-gray-500 hover:text-[#9BCCED]">
-                    {pathMap[segment] || segment}
+                    {pathMap[segmentName] || segmentName}
                   </Link>
                   <ChevronRight className="h-4 w-4 mx-2 text-gray-400" aria-hidden="true" />
                 </>

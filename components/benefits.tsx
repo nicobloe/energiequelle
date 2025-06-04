@@ -37,24 +37,26 @@ export default function Benefits() {
       <div id="benefits" className="-mt-24 pt-24 invisible absolute"></div>
 
       <section className="section pt-8 md:pt-12">
-        <h2 className="section-title">Warum Zinzino?</h2>
-        <p className="section-subtitle">
-          Zinzino steht für höchste Qualität und wissenschaftlich fundierte Nahrungsergänzungsmittel, die Ihr
-          Wohlbefinden nachhaltig verbessern können.
-        </p>
+        <div className="container mx-auto px-4">
+          <h2 className="section-title">Warum Zinzino?</h2>
+          <p className="section-subtitle">
+            Zinzino steht für höchste Qualität und wissenschaftlich fundierte Nahrungsergänzungsmittel, die Ihr
+            Wohlbefinden nachhaltig verbessern können.
+          </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-          {benefits.map((benefit, index) => (
-            <div key={index} className="bg-white p-4 rounded-lg shadow-md">
-              <div className="flex items-start mb-4">
-                <div className="bg-[#9BCCED] p-2 rounded-full mr-4">
-                  <Check className="h-5 w-5 text-white" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+            {benefits.map((benefit, index) => (
+              <div key={index} className="bg-white p-4 rounded-lg shadow-md">
+                <div className="flex items-start mb-4">
+                  <div className="bg-[#9BCCED] p-2 rounded-full mr-4">
+                    <Check className="h-5 w-5 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-[#9BCCED]">{benefit.title}</h3>
                 </div>
-                <h3 className="text-xl font-bold text-[#9BCCED]">{benefit.title}</h3>
+                <p className="text-gray-600">{benefit.description}</p>
               </div>
-              <p className="text-gray-600">{benefit.description}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
     </>

@@ -5,10 +5,24 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
+// Sichere String-Verarbeitung
+export function safeString(value: any): string {
+  if (value === null || value === undefined) {
+    return ""
+  }
+  return String(value)
+}
+
+// Sichere toLowerCase-Funktion
+export function safeToLowerCase(value: any): string {
+  const str = safeString(value)
+  return str.toLowerCase()
+}
+
 // Füge eine Hilfsfunktion hinzu, um sicherzustellen, dass JSON-Daten korrekt serialisiert werden
 export function safeJsonParse(data: string) {
   try {
-    return JSON.parse(data)
+    return JSON.parse(data || "{}")
   } catch (error) {
     console.error("JSON parse error:", error)
     return null
